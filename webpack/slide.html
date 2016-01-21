@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>webpack module bundler</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-slide-content { vertical-align: middle; text-align: center }
+      kbd { font-size: xx-small !important; vertical-align: super }
+      kbd:before { content: "[" }
+      kbd:after { content: "]" }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+# webpack module bundler
+
+[GitHub](https://github.com/sharils/slides/tree/webpack-1.0.0/webpack)
+
+---
+
+# Install
+
+    npm install webpack -g
+
+---
+
+# Usage <kbd>p</kbd>
+
+    webpack ./entry.js bundle.js
+
+???
+
+tail -n+1 ./demo-usage/\*
+
+cd ./demo-usage/ && webpack ./entry.js bundle.js && cd ..
+
+---
+
+# webpack.config.js <kbd>p</kbd>
+
+    module.exports = {           
+        entry: "./entry.js",     
+        output: {                
+            path: __dirname,     
+            filename: "bundle.js"
+        }                        
+    };                           
+
+???
+
+tail -n+1 ./demo-webpack.config.js/\*
+
+cd ./demo-webpack.config.js/ && webpack && cd ..
+
+---
+
+# watch
+
+    webpack -w
+
+---
+
+# watch <kbd>p</kbd>
+
+    module.exports = {           
+        entry: "./entry.js",     
+        output: {                
+            path: __dirname,     
+            filename: "bundle.js"
+        },                       
+        watch: true              
+    };                           
+
+???
+
+tail -n+1 ./demo-watch/\*
+
+cd ./demo-watch/ && webpack && cd ..
+
+---
+
+# webpack-dev-server <kbd>p</kbd>
+
+    npm install webpack-dev-server -g
+
+???
+
+tail -n+1 ./demo-webpack-dev-server/\*
+
+cd ./demo-webpack-dev-server/ && webpack-dev-server && cd ..
+
+cd ./demo-webpack-dev-server/ && webpack-dev-server --host=0.0.0.0 && cd ..
+
+---
+
+# require <kbd>p</kbd>
+
+    require("./content.js");
+
+???
+
+tail -n+1 ./demo-require/\*
+
+cd ./demo-require/ && webpack && cd ..
+
+---
+
+# CSS
+
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    ↓
+    require("./style.css");
+
+---
+
+# CSS
+
+    module.exports = {                                 
+        entry: "./entry.js",                           
+        output: {                                      
+            path: __dirname,                           
+            filename: "bundle.js"                      
+        },                                             
+        module: {                                      
+            loaders: [                                 
+                { test: /\.css$/, loader: "style!css" }
+            ]                                          
+        }                                              
+    };                                                 
+
+---
+
+# CSS <kbd>p</kbd>
+
+    npm install style-loader css-loader
+
+???
+
+tail -n+1 ./demo-css/\*
+
+cd ./demo-css/ && npm install style-loader css-loader && cd ..
+
+cd ./demo-css/ && webpack && cd ..
+
+---
+
+# JSX
+
+    module.exports = {                                         
+        entry: "./entry.jsx",                                  
+        output: {                                              
+            path: __dirname,                                   
+            filename: "bundle.js"                              
+        },                                                     
+        module: {                                              
+            loaders: [                                         
+                {                                              
+                    test: /\.jsx?$/,                           
+                    exclude: /(node_modules|bower_components)/,
+                    loader: 'babel',                           
+                    query: {                                   
+                        presets: ['react', 'es2015']           
+                    }                                          
+                }                                              
+            ]                                                  
+        }                                                      
+    };                                                         
+
+---
+
+# JSX <kbd>p</kbd>
+
+    npm install \            
+        react \              
+        react-dom \          
+        babel-loader \       
+        babel-core \         
+        babel-preset-es2015 \
+        babel-preset-react   
+
+???
+
+tail -n+1 ./demo-jsx/\*
+
+cd ./demo-jsx/ && npm install react react-dom babel-loader babel-core babel-preset-es2015 babel-preset-react && cd ..
+
+cd ./demo-jsx/ && webpack && cd ..
+
+---
+
+# JSX-ES6
+
+    module.exports = {                                         
+        entry: "./entry.jsx",                                  
+        output: {                                              
+            path: __dirname,                                   
+            filename: "bundle.js"                              
+        },                                                     
+        module: {                                              
+            loaders: [                                         
+                {                                              
+                    test: /\.jsx?$/,                           
+                    exclude: /(node_modules|bower_components)/,
+                    loader: 'babel',                           
+                    query: {                                   
+                        presets: ['react', 'es2015']           
+                    }                                          
+                }                                              
+            ]                                                  
+        }                                                      
+    };                                                         
+
+---
+
+# JSX-ES6 <kbd>p</kbd>
+
+    npm install \            
+        babel-loader \       
+        babel-core \         
+        babel-preset-es2015 \
+        babel-preset-react   
+
+???
+
+tail -n+1 ./demo-jsx-es6/\*
+
+cd ./demo-jsx-es6/ && npm install react react-dom babel-loader babel-core babel-preset-es2015 babel-preset-react && cd ..
+
+cd ./demo-jsx-es6/ && webpack && cd ..
+
+---
+
+# LiveScript
+
+    module.exports = {                                 
+        entry: "./entry.ls",                           
+        output: {                                      
+            path: __dirname,                           
+            filename: "bundle.js"                      
+        },                                             
+        module: {                                      
+            loaders: [                                 
+                { test: /\.ls$/, loader: "livescript" }
+            ]                                          
+        }                                              
+    };                                                 
+
+---
+
+# LiveScript <kbd>p</kbd>
+
+    npm install livescript-loader
+
+???
+
+tail -n+1 ./demo-ls/\*
+
+cd ./demo-ls/ && npm install livescript-loader && cd ..
+
+cd ./demo-ls/ && webpack && cd ..
+
+---
+
+# Loader
+
+[list of 156 loaders](http://webpack.github.io/docs/list-of-loaders.html)
+
+---
+
+# Code splitting
+
+    require.ensure(["./content.js"], function (require) {  
+        document.body.innerHTML += require("./content.js");
+    })                                                     
+
+---
+
+# Code splitting
+
+    require(["./content.js"], function (content) {         
+        document.body.innerHTML += content;                
+    })                                                     
+
+???
+
+tail -n+1 ./demo-code-splitting/\*
+
+cd ./demo-code-splitting/ && webpack && cd ..
+
+---
+
+# Q&A
+
+---
+
+# The End
+
+    </textarea>
+    <script src="out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
