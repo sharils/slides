@@ -1,3 +1,6 @@
 [submodule "remark"]
 	path = remark
 	url = https://github.com/gnab/remark.git
+[submodule "deck.js"]
+	path = deck.js
+	url = https://github.com/imakewebthings/deck.js.git

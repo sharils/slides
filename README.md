@@ -54,3 +54,34 @@ Greasemonkey UserScript
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
 xdg-open /tmp/slides/greasemonkey-userscript/index.html
 ```
+
+Software Development
+--------------------
+
+### Cygwin ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/cygwin/index.html
+```
+
+### Git ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/git/index.html
+```
+
+### OpenSSH ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/openssh/index.html
+```
+
+### Github ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/github/index.html
+```
