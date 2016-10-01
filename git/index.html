@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Git 1.7.9</title>
+
+	<meta name="description" content="A jQuery library for modern HTML presentations">
+	<meta name="author" content="Caleb Troughton">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	<base href="..">
+
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="deck.js/core/deck.core.css">
+	<link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="deck.js/extensions/scale/deck.scale.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="deck.js/themes/style/web-2.0.css">
+
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="deck.js/themes/transition/horizontal-slide.css">
+
+	<script src="deck.js/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<!-- Begin slides -->
+<section class="slide">
+	<h1>Git 1.7.9</h1>
+</section>
+
+<section class="slide">
+	<h2>Offline manual for git commands</h2>
+	<p>You can always enter man git-&lt;command&gt; to read the offline manual
+	for the command. e.g. <kbd>man git-status</kbd></p>
+	<p>Press q to quit the manual anytime.</p>
+</section>
+
+<section class="slide">
+	<h2>Create an empty git repository</h2>
+	<ol>
+		<li><kbd>mkdir --parents ~/projects/lab</kbd></li>
+		<li><kbd>cd ~/projects/lab</kbd></li>
+		<li><kbd>git init</kbd></li>
+	</ol>
+	<p>This makes the ~/projects/lab folder a git repository.</p>
+</section>
+
+<section class="slide">
+	<h2>Set repository or global options</h2>
+	<ol>
+		<li><kbd>git config user.name root</kbd></li>
+		<li><kbd>git config user.email root@example.com</kbd></li>
+	</ol>
+	<p>These are important because they are shown in the commit history.</p>
+	<ol>
+		<li><kbd>git config --global core.autocrlf input</kbd></li>
+	</ol>
+	<p>This is important because you wouldn't want to handle the EOL issue by
+	yourself when you collaborate with people from different operating
+	systems.</p>
+	<ol>
+		<li><kbd>git config --global color.ui true</kbd></li>
+	</ol>
+	<p>This enables color.</p>
+</section>
+
+<section class="slide">
+	<h2>A little trick</h2>
+	<ol>
+		<li><kbd>git commit --allow-empty --allow-empty-message
+		--message=</kbd></li>
+	</ol>
+	<p>This creates an empty commit that has no message. This makes our life
+	easier because we can do git reset HEAD.</p>
+</section>
+
+<section class="slide">
+	<h2>Show the working tree status</h2>
+	<ol>
+		<li><kbd>git status</kbd></li>
+		<li><kbd>echo 'hello world' &gt; README.markdown</kbd></li>
+		<li><kbd>git status</kbd></li>
+	</ol>
+	<p><kbd>git status --branch --short</kbd> shows a more compact result.</p>
+</section>
+
+<section class="slide">
+	<h2>Add file contents to the index</h2>
+	<ol>
+		<li><kbd>git status</kbd></li>
+		<li><kbd>git add README.markdown</kbd></li>
+		<li><kbd>git status</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Remove file contents from the index</h2>
+	<ol>
+		<li><kbd>git status</kbd></li>
+		<li><kbd>git reset HEAD README.markdown</kbd></li>
+		<li><kbd>git status</kbd></li>
+	</ol>
+	<p>HEAD in 'git reset HEAD' must be all uppercase. It is a reference to the
+	commit you are currently at.</p>
+</section>
+
+<section class="slide">
+	<h2>Show commit logs</h2>
+	<ol>
+		<li><kbd>git log</kbd></li>
+	</ol>
+	<p><kbd>git log --decorate --graph --oneline</kbd> shows a more compact
+	result.</p>
+	<p>New commits are at the top.</p>
+</section>
+
+<section class="slide">
+	<h2>Shows the log message and textual diff</h2>
+	<ol>
+		<li><kbd>git show &lt;hash&gt;</kbd></li>
+	</ol>
+	<p>git show is useful when you want to know what a commit does.</p>
+	<p><kbd>git show</kbd> is equal to <kbd>git show HEAD</kbd></p>
+</section>
+
+<section class="slide">
+	<h2>Record changes to the repository</h2>
+	<ol>
+		<li><kbd>git add README.markdown</kbd></li>
+		<li><kbd>git status</kbd></li>
+		<li><kbd>git log</kbd></li>
+		<li><kbd>git commit --message='add repository info'</kbd></li>
+		<li><kbd>git status</kbd></li>
+		<li><kbd>git log</kbd></li>
+	</ol>
+	<p>git commit --message='add repository info' can be simplified to git
+	commit -m 'add repository info'</p>
+</section>
+
+<section class="slide">
+	<h2>Record changes to the repository</h2>
+	<p>When you forget to incldue a change in the latest commit. You can use
+	<kbd>git commit --amend</kbd> to include it.</p>
+	<ol>
+		<li><kbd>echo 'http://www.gnu.org/licenses/agpl-3.0.html' &gt; LICENSE</kbd></li>
+		<li><kbd>git add LICENSE</kbd></li>
+		<li><kbd>git show</kbd></li>
+		<li><kbd>git commit --amend --reuse-message=HEAD</kbd></li>
+		<li><kbd>git show</kbd></li>
+	</ol>
+	<p>You can also use <kbd>git commit --amend</kbd> to change the latest
+	commit message.</p>
+</section>
+
+<section class="slide">
+	<h2>A good commit</h2>
+	<h3>Must</h3>
+	<ul>
+		<li>Not introduce unexpected change of the program's behaviour.</li>
+		<li>Not introduce any new bug.</li>
+		<li>Not do more than what its commit message says.</li>
+		<li>Do as few things as possible.</li>
+		<li>Have a commit message that describes and explains itself.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>A good commit</h2>
+	<h3>Should</h3>
+	<ul>
+		<li>Make the first line have no more than 50 characters.</li>
+		<li>Leave the second line blank.</li>
+		<li>Make the other lines have no more than 72 characters.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Show changes between commits</h2>
+	<h3>View the changes you staged for the next commit relative to HEAD</h3>
+	<ol>
+		<li><kbd>git diff --staged</kbd></li>
+		<li><kbd>echo 'git diff --staged show this message' &gt;&gt; README.markdown</kbd></li>
+		<li><kbd>git add README.markdown</kbd></li>
+		<li><kbd>git diff --staged</kbd></li>
+		<li><kbd>git status</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Show changes between commits</h2>
+	<h3>View the changes you made relative to the index</h3>
+	<ol>
+		<li><kbd>git diff</kbd></li>
+		<li><kbd>echo 'git diff show this message' &gt;&gt; README.markdown</kbd></li>
+		<li><kbd>git diff</kbd></li>
+		<li><kbd>git status</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Checkout a branch or paths to the working tree</h2>
+	<h3>Update the named paths in the working tree from the index file</h3>
+	<ol>
+		<li><kbd>git checkout README.markdown</kbd></li>
+	</ol>
+	<p>This is an easier way to discard unstaged changes.</p>
+	<p>To discard staged changes. We can do:</p>
+	<ol>
+		<li><kbd>git reset HEAD README.markdown</kbd></li>
+		<li><kbd>git checkout README.markdown</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Checkout a branch or paths to the working tree</h2>
+	<h3>Update the named paths in the working tree from a named
+	&lt;commit&gt;</h3>
+	<ol>
+		<li><kbd>git checkout &lt;commit&gt; &lt;path&gt;</kbd></li>
+	</ol>
+	<p>This tells git to make the file and only the file looks the same as when
+	repository is at the commit.</p>
+	<ol>
+		<li><kbd>git reset HEAD README.markdown</kbd></li>
+		<li><kbd>git checkout README.markdown</kbd></li>
+	</ol>
+	<p>So the above can be simplified to the following command.</p>
+	<ol>
+		<li><kbd>git checkout HEAD README.markdown</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Show changes between commits</h2>
+	<h3>View the changes between two arbitrary &lt;commit&gt;</h3>
+	<ol>
+		<li><kbd>git diff &lt;hash-of-begin&gt; &lt;hash-of-end&gt;</kbd></li>
+	</ol>
+	<p>The result will not include what the commit with hash of begin does.
+	Except when both hashes point to the same commit.</p>
+	<p>git diff is useful when you want to know what a series of commits do.
+	e.g. when you are doing code review.</p>
+</section>
+
+<section class="slide">
+	<h2>List, create, or delete branches</h2>
+	<h3>List</h3>
+	<ol>
+		<li><kbd>git branch</kbd></li>
+	</ol>
+	<p>This lists all branches you have. The star sign indicates which branch
+	you are currently on. You can also see your current branch name in the
+	result of <kbd>git status</kbd></p>
+</section>
+
+<section class="slide">
+	<h2>List, create, or delete branches</h2>
+	<h3>Create</h3>
+	<ol>
+		<li><kbd>git branch &lt;branchname&gt;</kbd></li>
+	</ol>
+	<p>The above creates a new branch. The branch is the same as HEAD.</p>
+	<ol>
+		<li><kbd>git branch</kbd></li>
+		<li><kbd>git branch wip</kbd></li>
+		<li><kbd>git branch</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>List, create, or delete branches</h2>
+	<h3>Delete</h3>
+	<ol>
+		<li><kbd>git branch -d &lt;branchname&gt;</kbd></li>
+	</ol>
+	<p>The above deletes the branch.</p>
+	<ol>
+		<li><kbd>git branch</kbd></li>
+		<li><kbd>git branch -d wip</kbd></li>
+		<li><kbd>git branch</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Checkout a branch to the working tree</h2>
+	<ol>
+		<li><kbd>git checkout &lt;branch&gt;</kbd></li>
+	</ol>
+	<p>This switches your branch to the branch</p>
+	<ol>
+		<li><kbd>git branch</kbd></li>
+		<li><kbd>git branch wip</kbd></li>
+		<li><kbd>git checkout wip</kbd></li>
+		<li><kbd>git branch</kbd></li>
+	</ol>
+	<p>We can see the star sign shows in front of the wip branch. By the
+	way</p>
+	<ol>
+		<li><kbd>git branch wip</kbd></li>
+		<li><kbd>git checkout wip</kbd></li>
+	</ol>
+	<p>Can be simplified as</p>
+	<ol>
+		<li><kbd>git checkout -b wip</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Show branches and their commits</h2>
+	<ol>
+		<li><kbd>echo 'a for apple' &gt;&gt; README.markdown</kbd></li>
+		<li><kbd>git add --update</kbd></li>
+		<li><kbd>git commit -m 'add definition of a'</kbd></li>
+		<li><kbd>git show-branch</kbd></li>
+		<li><kbd>git log --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>We can see that the wip branch has one more commit than the master
+	branch in the result of git show-branch.</p>
+	<p>We can also see that the wip branch is in front of the master branch in
+	the result of git log</p>
+	<p>git add --update will include all modified changed included deletion for
+	you. git add -u is a shortcut for git add --update</p>
+</section>
+
+<section class="slide">
+	<h2>Show branches and their commits</h2>
+	<ol>
+		<li><kbd>git checkout master</kbd></li>
+		<li><kbd>echo 'add definition of the other letters' &gt;
+		TODO</kbd></li>
+		<li><kbd>git add TODO</kbd></li>
+		<li><kbd>git commit -m 'add todo'</kbd></li>
+		<li><kbd>git show-branch</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>We can see that both the master and the wip branch has a commit that the
+	other branch does not have in the result of git show-branch.</p>
+	<p>We can also see that the wip branch and the master branch diverged in
+	the result of git log. By the way, we need to add the --all switch to git
+	log to be able to see the wip branch.</p>
+</section>
+
+<section class="slide">
+	<h2>Join two or more development histories together</h2>
+	<ol>
+		<li><kbd>git merge wip</kbd></li>
+		<li><kbd>git show-branch</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>We can see that both the master and the wip branch has a commit that the
+	other branch does not have in the result of git show-branch.</p>
+	<p>We can also see that the wip branch and the master branch diverged in
+	the result of git log. By the way, we need to add the --all switch to git
+	log to be able to see the wip branch.</p>
+</section>
+
+<section class="slide">
+	<h2>Join two or more development histories together</h2>
+	<ol>
+		<li><kbd>echo 'b for boy' &gt;&gt; README.markdown</kbd></li>
+		<li><kbd>git commit -m 'add definition of b' README.markdown</kbd></li>
+		<li><kbd>git show-branch</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+		<li><kbd>git branch -d wip</kbd></li>
+	</ol>
+	<p><kbd>git commit -m &lt;message&gt; &lt;file&gt;</kbd> is a shortcut for
+	<kbd>git add &lt;file&gt;; git commit -m &lt;message&gt;</kbd></p>
+</section>
+
+<section class="slide">
+	<h2>Join two or more development histories together</h2>
+	<ol>
+		<li><kbd>git checkout -b wip master^</kbd></li>
+		<li><kbd>echo 'c for car' &gt;&gt; README.markdown</kbd></li>
+		<li><kbd>git commit -m 'add definition of c' README.markdown</kbd></li>
+		<li><kbd>git show-branch</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>git checkout -b &lt;branch-name&gt; &lt;starting-point&gt; is a shortcut
+	for git branch &lt;branch-name&gt; &lt;starting-point&gt;; git checkout &lt;branch-name&gt;</p>
+	<p>master^ means the previous commit of master. And it is chainable in
+	other words, master^^ is two commits before master.</p>
+</section>
+
+<section class="slide">
+	<h2>Abort a merge</h2>
+	<ol>
+		<li><kbd>git checkout master</kbd></li>
+		<li><kbd>git merge wip</kbd></li>
+		<li><kbd>git branch</kbd></li>
+		<li><kbd>git status</kbd></li>
+	</ol>
+	<p>Git complains that there is a conflict because the same line is modified
+	in two commits! But we don't know what to do yet. So we decide not to do
+	anything by entering <kbd>git merge --abort</kbd></p>
+</section>
+
+<section class="slide" id="resolving-conflict">
+	<h2>Resolve conflict</h2>
+	<ol>
+		<li><kbd>git checkout master</kbd></li>
+		<li><kbd>git merge wip</kbd></li>
+		<li><kbd>git branch</kbd></li>
+		<li><kbd>git diff</kbd></li>
+	</ol>
+	<p>git diff tells us that the conflict line in the HEAD is 'b for boy' and
+	the conflict line in the wip branch is 'c for car'.</p>
+</section>
+
+<section class="slide">
+	<h2>Resolve conflict</h2>
+	<p>To resolve this conflict, we need to clean the conflict section and make
+	it what we want. In this case we want both the definitions of b and c.</p>
+	<p>You can enter <kbd>git mergetool</kbd> or any external text editor to
+	achieve this. Let's assume you choosed git mergetool. Git will then ask
+	which tool you want to use. Hit enter again to choose vim.</p>
+</section>
+
+<section class="slide">
+	<h2>Resolve conflict</h2>
+	<p>You should be seeing something like this.</p>
+	<p><img alt="vimdiff as the mergetool" src="git/mergetool-vimdiff.gif"/></p>
+</section>
+
+<section class="slide">
+	<h2>Resolve conflict</h2>
+	<p>You should be seeing something like this.</p>
+	<p>The top left section is showing what the file looks like in the local
+	branch. That is the HEAD commit in our case the master branch.</p>
+	<p>The top center section is showing what the file looks like at the common
+	ancestor of the master and the wip branches.</p>
+	<p>The top right section is showing what the file looks like in the remote
+	branch in our case the wip branch.</p>
+	<p>The bottom section is what the file looks like now. This is also where we
+	resolve the conflict.</p>
+</section>
+
+<section class="slide">
+	<h2>Resolve conflict</h2>
+	<p>Vim has a steep learning, but it is still worthy of learning.</p>
+	<p>But for right now, we are only going to learn how to solve a conflict
+	with vim.</p>
+	<ol>
+		<li>Hit <kbd>i</kbd>. You should see -- INSERT -- at the left bottom
+		corner.</li>
+		<li>Move around to remove lines we don't want. This includes
+			<ul>
+				<li>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
+				<li>=======</li>
+				<li>&gt;&gt;&gt;&gt;&gt;&gt;&gt; wip</li>
+			</ul>
+		</li>
+		<li>Hit <kbd>ESC</kbd>. You should no longer see -- INSERT -- at the
+		left bottom corner.</li>
+		<li>Hit <kbd>:</kbd></li>
+		<li>Enter <kbd>xa</kbd>. You should quit Vim now.</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Resolve conflict</h2>
+	<ol>
+		<li><kbd>git diff --staged</kbd></li>
+		<li><kbd>git commit</kbd></li>
+		<li>Hit <kbd>:</kbd></li>
+		<li>Enter <kbd>xa</kbd>. You should quit Vim now.</li>
+		<li><kbd>git branch -d wip</kbd></li>
+	</ol>
+	<p>git commit will give us the commit message when a conflict is
+	resolved.</p>
+</section>
+
+<section class="slide">
+	<h2>Reset current HEAD to the specified state</h2>
+	<ol>
+		<li><kbd>git checkout -b wip</kbd></li>
+		<li><kbd>echo 'd for dog' &gt;&gt; README.markdown</kbd></li>
+		<li><kbd>git commit -a -m 'add definition for d'</kbd></li>
+	</ol>
+	<p>git commit -a -m 'add definition for d' is a shortcut for git add -u;
+	git commit -m 'add definition for d'</p>
+	<p>We just created a new commit on the wip branch but we decided to discard
+	the commit now.</p>
+	<ol>
+		<li><kbd>git reset HEAD^</kbd></li>
+		<li><kbd>git status</kbd></li>
+	</ol>
+	<p>This will put the change in your unstaged change. If you want to just
+	discard it. You can do <kbd>git reset --hard wip^</kbd></p>
+</section>
+
+<section class="slide">
+	<h2>Stash the changes in a dirty working directory away</h2>
+	<ol>
+		<li><kbd>git checkout master</kbd></li>
+		<li><kbd>echo 'd for dog' &gt;&gt; README.markdown</kbd></li>
+		<li><kbd>git commit -am 'add definition for d'</kbd></li>
+		<li><kbd>git checkout wip</kbd></li>
+		<li><kbd>echo 'e for elephant' &gt;&gt; README.markdown</kbd></li>
+		<li><kbd>git checkout master</kbd></li>
+	</ol>
+	<p>Git now has a complaint.</p>
+</section>
+
+<section class="slide">
+	<h2>Stash the changes in a dirty working directory away</h2>
+	<p>The easy way around that is:</p>
+	<ol>
+		<li><kbd>git stash</kbd></li>
+		<li><kbd>git checkout master</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>git stash has stored the change in a safe place. We can see that there
+	is a branch called refs/stash.</p>
+</section>
+
+<section class="slide">
+	<h2>Stash the changes in a dirty working directory away</h2>
+	<p>Once you have done. You can do the following steps to restore the state
+	of your index.</p>
+	<ol>
+		<li><kbd>git checkout wip</kbd></li>
+		<li><kbd>git stash pop</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Stash the changes in a dirty working directory away</h2>
+	<p>Once you have done. You can do the following steps to restore the state
+	of your index.</p>
+	<ol>
+		<li><kbd>git checkout wip</kbd></li>
+		<li><kbd>git stash pop</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Stash the changes in a dirty working directory away</h2>
+	<ol>
+		<li><kbd>git stash</kbd></li>
+		<li><kbd>git stash list</kbd></li>
+		<li><kbd>git stash show --patch stash@{0}</kbd></li>
+	</ol>
+	<p>git stash list will show all the changes stored.</p>
+	<p>git stash show --patch stash@{0} shows what the change in the stash is.
+	It can be simplified to <kbd>git stash show --patch</kbd> or <kbd>git
+	stash show -p.</kbd></p>
+	<p>If you don't want the change. You can do <kbd>git stash drop
+	stash@{0}</kbd> or <kbd>git stash drop</kbd> to discard it.</p>
+</section>
+
+<section class="slide">
+	<h2>Forward-port local commits to the updated upstream head</h2>
+	<ol>
+		<li><kbd>echo 'add credit' &gt;&gt; TODO</kbd></li>
+		<li><kbd>git commit -am 'add more todo'</kbd></li>
+		<li><kbd>git rebase master</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>git rebase changes the base of the wip branch to the latest master
+	branch. If you keep doing this, you will have a clean linear commit
+	history.</p>
+</section>
+
+<section class="slide">
+	<h2>Forward-port local commits to the updated upstream head</h2>
+	<ol>
+		<li><kbd>git rebase --onto master~ master wip</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>You can change the state back by doing this. This is saying that I want
+	a series of commits from master to wip, but I don't want what the master
+	commit does. When you have this set of commits ready, use the master~
+	commit as its base and put it there. This is the new wip branch.</p>
+</section>
+
+<section class="slide">
+	<h2>Forward-port local commits to the updated upstream head</h2>
+	<ol>
+		<li><kbd>git stash pop</kbd></li>
+		<li><kbd>git commit -am 'add definition for e'</kbd></li>
+		<li><kbd>git rebase master</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>Git is complaining about conflict again. We can <kbd>git rebase
+	--abort</kbd> to abort the current rebase process. Or we can solve the
+	conflict using <a href="git/index.html#resolving-conflict">the method
+	we learned</a> before.</p>
+	<p>When the conflict is resolved enter <kbd>git rebase --continue</kbd>
+	to continue the process.</p>
+</section>
+
+<section class="slide">
+	<h2>git merge v.s. git rebase</h2>
+	<p>
+		There are debates about whether to use git merge or git rebase. I
+		personally like
+		<a href="http://geekblog.oneandoneis2.org/index.php/2013/04/30/please-stay-away-from-rebase">
+			Please, stay away from rebase
+		</a>
+		.
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Apply the changes introduced by some existing commits</h2>
+	<ol>
+		<li><kbd>git checkout master</kbd></li>
+		<li><kbd>git cherry-pick wip</kbd></li>
+		<li><kbd>git log --all --decorate --graph --oneline</kbd></li>
+	</ol>
+	<p>Now we decided that we only want the commit that defines 'e'. We can
+	use git cherry-pick to get a certain commit from the other branch.</p>
+	<p>From the result of git log, we can see that the master branch get
+	only the commit that we want.</p>
+</section>
+
+<section class="slide">
+	<h2>Remove files from the working tree and from the index</h2>
+	<p>There is a way to delete a file from the repository.</p>
+	<ol>
+		<li><kbd>rm TODO</kbd></li>
+		<li><kbd>git add -u</kbd></li>
+	</ol>
+	<p>But there is actually a better and accurate way to do it.</p>
+	<ol>
+		<li><kbd>git rm TODO</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Move or rename a file, a directory, or a symlink</h2>
+	<p>There is a way to rename a file from the repository.</p>
+	<ol>
+		<li><kbd>mv README.markdown README</kbd></li>
+		<li><kbd>git add -u</kbd></li>
+		<li><kbd>git add README</kbd></li>
+	</ol>
+	<p>But there is actually a better and accurate way to do it.</p>
+	<ol>
+		<li><kbd>git mv README.markdown README</kbd></li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Find by binary search the change that introduced a bug</h2>
+	<ol>
+		<li><kbd>git bisect start &lt;bad-commit&gt;
+		&lt;good-commit&gt;</kbd></li>
+	</ol>
+	<p>git bisect is useful if you want to find the commit that introduced a
+	bug. But you do not know which commit introduced the bug. You can then find
+	a good commit then use git bisect start to start a bisection search.</p>
+	<p>When git bisect started, it will jump between commit and ask you tell
+	tell it whether this commit is has the same problem or not by telling it
+	good or bad. You tell it the current commit is good by <kbd>git bisect
+	good</kbd> or <kbd>git bisect bad</kbd> if it is bad. Then you will find
+	the commit at the end.</p>
+</section>
+
+<section class="slide">
+	<h2>Initialize, update or inspect submodules</h2>
+	<h3>Add a submodule</h3>
+	<ol>
+		<li><kbd>git submodule add
+		https://github.com/sharils/software-development
+		vendor/software-development</kbd></li>
+		<li><kbd>git commit -am 'add a submodule'</kbd></li>
+	</ol>
+	<p>This adds the software-development as a submodule to the current
+	repository.</p>
+</section>
+
+<section class="slide">
+	<h2>Initialize, update or inspect submodules</h2>
+	<h3>Set the state of the submodule</h3>
+	<ol>
+		<li><kbd>cd vendor/software-development</kbd></li>
+		<li><kbd>git checkout origin/master~</kbd></li>
+		<li><kbd>cd ../..</kbd></li>
+		<li><kbd>git diff</kbd></li>
+		<li><kbd>git commit -am 'use the previous commit on master'</kbd></li>
+	</ol>
+	<p>To set which commit to use as a submodule, we simply go to the folder
+	where the submodule is. In the folder we'll find outself in another
+	repository.</p>
+	<p>In this example, we simply choose the previous master commit. You can
+	choose whatever commit you want. Then we go back to our supermodule.</p>
+	<p>We find that there is a change, by git diff. To lock the state of the
+	submodule, we add and commit it.</p>
+</section>
+
+<section class="slide">
+	<h2>Initialize, update or inspect submodules</h2>
+	<h3>Batch operation</h3>
+	<ol>
+		<li><kbd>git submodule foreach git pull origin master</kbd></li>
+	</ol>
+	<p>If you have many repositories that you need to update, you can do this
+	to update all the submodule.</p>
+</section>
+
+<section class="slide">
+	<h2>Initialize, update or inspect submodules</h2>
+	<h3>Delete a submodule</h3>
+	<ol>
+		<li><kbd>vim .gitmodules # delete software-development related
+		sections</kbd></li>
+		<li><kbd>vim .git/config # delete software-development related
+		sections</kbd></li>
+		<li><kbd>rm --force --recursive .git/module/vendor/software-development
+		vendor/software-development</kbd></li>
+		<li><kbd>git commit -am 'remove submodule'</kbd></li>
+	</ol>
+	<p>This is for git 1.7.9, there is no easy way to delete a submodule.</p>
+</section>
+
+<section class="slide">
+	<h2>Clone a repository into a new directory</h2>
+	<ol>
+		<li><kbd>cd ~/project/</kbd></li>
+		<li><kbd>git clone git://github.com/sharils/software-development.git</kbd></li>
+		<li><kbd>cd software-development</kbd></li>
+	</ol>
+	<p>Now you have a clone of the software-development repository. Feel free
+	to do any experiment.</p>
+</section>
+
+<section class="slide">
+	<h2>Download objects and refs from another repository</h2>
+	<ol>
+		<li><kbd>git fetch</kbd></li>
+	</ol>
+	<p>This updates the local information about the remote repository.</p>
+</section>
+
+<section class="slide">
+	<h2>Update remote refs along with associated objects</h2>
+	<ol>
+		<li><kbd>git push origin master</kbd></li>
+	</ol>
+	<p>When you think it's time to push your commits from your local repository
+	to the remote repository, you run this command.</p>
+</section>
+
+<section class="slide">
+	<h2>Update remote refs along with associated objects</h2>
+	<ol>
+		<li><kbd>git push origin HEAD:oops</kbd></li>
+		<li><kbd>git push origin :oops</kbd></li>
+	</ol>
+	<p><strong>Once your commit history is pushed. DO NOT change the commit.
+	Either the message or the changes it has. This also includes rebase! DO
+	NOTE change the history. THIS IS VERY IMPORTANT.</strong> Because if
+	someone has pulled from the repository, he will have problem pulling next
+	time.</p>
+	<p>git push origin HEAD:oops is telling git that I want to push HEAD to the
+	remote wip branch.</p>
+	<p>If you want to delete a branch on the remote repository, you can enter
+	git push origin :&lt;branch-name&gt;. This is telling git that I want to
+	push nothing to the remote wip branch. In other words, delete the remote
+	wip branch.</p>
+</section>
+
+<section class="slide">
+	<h2>Create, list, delete or verify a tag object signed with GPG</h2>
+	<p>If you want to tag a commit as a release, you usually use git tag. Enter
+	man git-tag for the usage. About software version, I suggest <a
+	href="http://semver.org/">Semantic Versioning</a>.</p>
+</section>
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+<!--
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+-->
+<script>window.jQuery || document.write('<script src="deck.js/jquery-1.7.2.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
+
+</body>
+</html>
