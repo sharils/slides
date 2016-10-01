@@ -55,6 +55,14 @@ git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slide
 xdg-open /tmp/slides/greasemonkey-userscript/index.html
 ```
 
+Software Patent
+---------------
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/software-patent/index.html
+```
+
 Software Development
 --------------------
 
