@@ -1,0 +1,7 @@
+{
+  "name": "component-boy",
+  "version": "0.0.0",
+  "dependencies": {
+    "component-apple": "../component-apple/.git#~1.0.0"
+  }
+}

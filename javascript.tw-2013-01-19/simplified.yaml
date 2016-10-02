@@ -1,0 +1,73 @@
+true:
+
+  - - null
+    - undefined
+
+  - - false
+    - 0
+    - ""
+    - "0"
+    - []
+    - [0]
+    - [""]
+    - ["0"]
+
+  - - true
+    - 1
+    - "1"
+    - [1]
+    - ["1"]
+
+  - - n
+    - "n"
+    - [n]
+    - ["n"]
+
+  - - "s"
+    - ["s"]
+
+false:
+
+  - one side:
+      - null
+      - undefined
+    the other side:
+      - boolean
+      - number
+      - string
+      - object
+
+  - one side:
+      - "s"
+    the other side:
+      - non-string
+      - ""
+      - "n"
+
+  - one side:
+      - object
+    the other side:
+      - null
+      - undefined
+      - NaN
+
+  - one side:
+      - NaN
+    the other side:
+      - anything
+
+  - one side:
+      - [].length > 1
+    the other side:
+      - non-string
+      - ""
+      - "n"
+      - non-csv string
+
+  - one side:
+      - new Date()
+    the other side:
+      - non-string
+      - ""
+      - "n"
+      - non-date string

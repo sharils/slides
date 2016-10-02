@@ -1,0 +1,13 @@
+{
+  "name": "component-apple",
+  "version": "1.0.0",
+  "dependencies": {},
+  "gitHead": "882b62a73a52dc9f15c2dd8e1db6595a2f9c6c5a",
+  "_id": "component-apple@1.0.0",
+  "readme": "ERROR: No README.md file found!",
+  "description": "ERROR: No README.md file found!",
+  "repository": {
+    "type": "git",
+    "url": "../component-apple/.git"
+  }
+}

@@ -1,0 +1,41 @@
+QUnit flow:
+
+  synchronous:
+
+    - load document.
+
+    - load qunit.js.
+
+    - qunit adds load event listener to window.
+
+    - load tests.js.
+
+    - document loaded.
+
+    - window dispatches load event.
+
+    - QUnit.load is triggered.
+
+  asynchronous:
+
+    - load document.
+
+    - document loaded.
+
+    - window dispatches load event.
+
+    - load require.js.
+
+    - load qunit.js.
+
+    - qunit adds load event listener to window.
+
+    - load tests.js.
+
+  problem:
+
+    QUnit.load is NEVER triggered in asynchronous flow.
+
+  solution:
+
+    Manual invocation.
