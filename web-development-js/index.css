@@ -1,0 +1,41 @@
+.tank
+{
+	width: 14em;
+}
+
+.tank .container,
+.tank .level-input,
+.tank .level-max,
+.tank .level-min,
+.tank .set
+{
+	width: 100%;
+}
+
+.tank .container
+{
+	border: black solid 2px;
+	height: 22.6em;
+	position: relative;
+}
+
+.tank .container .level
+{
+	background: cyan;
+	border-top: black solid thin;
+	bottom: 0;
+	height: 50%;
+	position: absolute;
+	width: 100%;
+}
+
+.tank .level .value
+{
+	text-align: center;
+}
+
+.tank .set
+{
+	display: block;
+	margin: auto;
+}

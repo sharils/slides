@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>	<html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>	<html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<base href="../deck.js/">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>PHP 5.4</title>
+
+	<meta name="description" content="A jQuery library for modern HTML presentations">
+	<meta name="author" content="Caleb Troughton">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="core/deck.core.css">
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="themes/style/web-2.0.css">
+
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+
+	<script src="modernizr.custom.js"></script>
+	<style type="text/css">
+		.bad-practice
+		{
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+
+<body class="deck-container">
+
+<!-- Begin slides -->
+<section class="slide">
+	<h1>PHP 5.4</h1>
+</section>
+
+<section class="slide">
+	<h2>Basic syntax</h2>
+	<pre><code>&lt;?php
+echo 'Hello World';</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Basic syntax</h2>
+	<h3>PHP tags</h3>
+	<pre><code>How &lt;?php echo 'are'; ?&gt; you?</code></pre>
+	<pre><code>How &lt;?= 'are'; ?&gt; you?</code></pre>
+	<p>The above is always working since PHP 5.4</p>
+	<pre><code class="bad-practice">How &lt;? echo 'are'; ?&gt; you?</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Basic syntax</h2>
+	<h3>PHP tags</h3>
+	<p>
+		End your file in a php context. Like:
+	</p>
+	<pre><code>&lt;?php
+echo 'Hello World';</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Basic syntax</h2>
+	<h3>PHP tags</h3>
+	<pre><code>&lt;?php
+echo 'This is a test';
+?&gt;
+&lt;?php echo 'This is a test' ?&gt;
+&lt;?php echo 'We omitted the last closing tag';</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Basic syntax</h2>
+	<h3>Comments</h3>
+	<pre><code>&lt;?php
+echo 'This is a test'; // a one-line comment</code></pre>
+	<pre><code>&lt;?php
+/* This is a multi line comment
+	yet another line of comment */
+echo 'This is yet another test';</code></pre>
+	<pre><code>&lt;?php
+echo 'One Final Test'; # Another one-line comment</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<ul>
+		<li>boolean: true, false</li>
+		<li>integer: ..., -3, -2,-1, 0, 1, 2, 3, ...</li>
+		<li>float: ..., -1.0, -0.5, 0, 0.5, 1.0, ...</li>
+		<li>string: talk about it later.</li>
+		<li>array: talk about it later.</li>
+		<li>object: talk about it later.</li>
+		<li>resource: talk about it later.</li>
+		<li>NULL: talk about it later.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Strings</h3>
+	<pre><code>&lt;?php
+echo 'this is a simple string';</code></pre>
+	<pre><code>&lt;?php
+echo "this is another string";</code></pre>
+	<pre><code>&lt;?php
+echo &lt;&lt;&lt;TEXT
+this is again another string
+TEXT;</code></pre>
+	<pre><code>&lt;?php
+echo &lt;&lt;&lt;'TEXT'
+this is yet another string
+TEXT;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Strings</h3>
+	<pre><code>&lt;?php
+echo 'this is a simple string';</code></pre>
+TEXT;</code></pre>
+	<pre><code>&lt;?php
+echo &lt;&lt;&lt;'TEXT'
+this is yet another string
+TEXT;</code></pre>
+	<p>
+		No interpretation.
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Strings</h3>
+	<pre><code>&lt;?php
+echo "this is another string";</code></pre>
+	<pre><code>&lt;?php
+echo &lt;&lt;&lt;TEXT
+this is again another string
+TEXT;</code></pre>
+	<p>They knows:</p>
+	<ul>
+		<li>
+			<strong>\e, \f, \n, \r, \t, \v.</strong>
+		</li>
+		<li>
+			<em>\", \$, \\</em>
+		</li>
+		<li>
+			\[0-7]{1,3}
+		</li>
+		<li>
+			\x[0-9A-Fa-f]{1,2}
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Strings</h3>
+	<pre><code>&lt;?php
+echo "this is another string";</code></pre>
+	<pre><code>&lt;?php
+echo &lt;&lt;&lt;TEXT
+this is again another string
+TEXT;</code></pre>
+	<p>They also knows defined variables.</p>
+	<pre><code>&lt;?php
+$juice = 'apple';
+echo "He drank some juice made of $juice.";
+echo "He drank some juice made of ${juice}s.";
+echo "He drank some juice made of {$juice}s.";</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Arrays</h3>
+	<pre><code>&lt;?php
+$names = array(
+	'alice' => 'Alice Alfred',
+	'bob' => 'Bob Bell',
+	'carol' => 'Carol Chaplin'
+);
+echo $names['carol'];</code></pre>
+	<pre><code>&lt;?php
+$names = array(
+	'Alice Alfred',
+	'Bob Bell',
+	'Carol Chaplin'
+);
+echo $names[2];</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Arrays</h3>
+	<p>Since PHP 5.4</p>
+	<pre><code>&lt;?php
+$names = [
+	'alice' => 'Alice Alfred',
+	'bob' => 'Bob Bell',
+	'carol' => 'Carol Chaplin'
+];
+echo $names['carol'];</code></pre>
+	<pre><code>&lt;?php
+$names = [
+	'Alice Alfred',
+	'Bob Bell',
+	'Carol Chaplin'
+];
+echo $names[2];</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Arrays</h3>
+	<pre><code>&lt;?php
+$names = array(
+	'alice' => 'Alice Alfred',
+	'bob' => 'Bob Bell'
+);
+$names['carol'] = 'Carol Chaplin';
+echo $names['carol'];</code></pre>
+	<pre><code>&lt;?php
+$names = array(
+	'Alice Alfred',
+	'Bob Bell'
+);
+$names[2] = 'Carol Chaplin';
+echo $names[2];</code></pre>
+	<pre><code>&lt;?php
+$names = array(
+	'Alice Alfred',
+	'Bob Bell'
+);
+$names[] = 'Carol Chaplin';
+echo $names[2];</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Arrays</h3>
+	<pre><code class="bad-practice">&lt;?php
+$names[carol] = 'Carol Chaplin';
+echo $names[carol];</code></pre>
+	<pre><code class="bad-practice">&lt;?php
+define('carol', 'CAROL');
+$names[carol] = 'Carol Chaplin';
+echo $names[carol];
+echo $names['carol'];</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<h3>Objects</h3>
+	<pre><code>&lt;?php
+class Bird
+{
+	public $legs = 2;
+}
+$chicken = new Bird();
+echo $chicken->legs;</code></pre>
+	<pre><code>&lt;?php
+class Bird {}
+$chicken = new Bird();
+$chicken->legs = 2;
+echo $chicken->legs;</code></pre>
+	<pre><code>&lt;?php
+$chicken = new stdClass();
+$chicken->legs = 2;
+echo $chicken->legs;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Types</h2>
+	<table>
+		<thead>
+			<th>$value</th>
+			<th>(bool)</th>
+			<th>(int)</th>
+			<th>(float)</th>
+			<th>(string)</th>
+			<th>(array)</th>
+		</thead>
+		<tbody>
+			<tr>
+				<th>null</th>
+				<td>false</td>
+				<td>0</td>
+				<td>0.0</td>
+				<td>''</td>
+				<td>array()</td>
+			</tr>
+			<tr>
+				<th>false</th>
+				<td>false</td>
+				<td>0</td>
+				<td>0.0</td>
+				<td>''</td>
+				<td>array(false)</td>
+			</tr>
+			<tr>
+				<th>true</th>
+				<td>true</td>
+				<td>1</td>
+				<td>1.0</td>
+				<td>'1'</td>
+				<td>array(true)</td>
+			</tr>
+			<tr>
+				<th>0</th>
+				<td>false</td>
+				<td>0</td>
+				<td>0.0</td>
+				<td>'0'</td>
+				<td>array(0)</td>
+			</tr>
+			<tr>
+				<th>1, 2, etc</th>
+				<td>true</td>
+				<td>1, 2, etc</td>
+				<td>1.0, 2.0, etc</td>
+				<td>'1', '2', etc</td>
+				<td>array(1), array(2), etc</td>
+			</tr>
+			<tr>
+				<th>0.0</th>
+				<td>false</td>
+				<td>0</td>
+				<td>0.0</td>
+				<td>'0.0'</td>
+				<td>array(0.0)</td>
+			</tr>
+			<tr>
+				<th>-1.0, -0.5, etc</th>
+				<td>true</td>
+				<td>-1, -0, etc</td>
+				<td>-1.0, -0.0, etc</td>
+				<td>'-1.0', '-0.5', etc</td>
+				<td>array(-1.0), array(-0.0), etc</td>
+			</tr>
+			<tr>
+				<th>0.5, 1.0, etc</th>
+				<td>true</td>
+				<td>0, 1, etc</td>
+				<td>0.0, 1.0, etc</td>
+				<td>'0.0', '1.0', etc</td>
+				<td>array(0.0), array(1.0), etc</td>
+			</tr>
+			<tr>
+				<th>''</th>
+				<td>false</td>
+				<td>0</td>
+				<td>0.0</td>
+				<td>''</td>
+				<td>array('')</td>
+			</tr>
+			<tr>
+				<th>'a'</th>
+				<td>true</td>
+				<td>0</td>
+				<td>0.0</td>
+				<td>'a'</td>
+				<td>array('a')</td>
+			</tr>
+			<tr>
+				<th>'0'</th>
+				<td>false</td>
+				<td>0</td>
+				<td>0.0</td>
+				<td>'0'</td>
+				<td>array('0')</td>
+			</tr>
+			<tr>
+				<th>'1'</th>
+				<td>true</td>
+				<td>1</td>
+				<td>1.0</td>
+				<td>'1'</td>
+				<td>array('1')</td>
+			</tr>
+			<tr>
+				<th>array()</th>
+				<td>false</td>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>'Array'</td>
+				<td>array()</td>
+			</tr>
+			<tr>
+				<th>object without propety</th>
+				<td>false</td>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>__toString()</td>
+				<td>complicated</td>
+			</tr>
+			<tr>
+				<th>object with propety</th>
+				<td>true</td>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>__toString()</td>
+				<td>complicated</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>For conversion to object, check the manual.</p>
+</section>
+
+<section class="slide">
+	<h2>Variables</h2>
+	<pre><code>&lt;?php
+$alice = 'Alice';
+$Bob = 'Bob';
+$_carol = 'Carol';
+$d6vid = 'David';</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Variables</h2>
+	<pre><code>&lt;?php
+$bye_bye = 'Bye bye.';
+$ciao_ciao =& $bye_bye;
+echo $bye_bye, $ciao_ciao;
+$ciao_ciao = 'Ciao ciao.';
+echo $bye_bye, $ciao_ciao;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Variables</h2>
+	<pre><code>&lt;?php
+$a = 1;
+function test()
+{
+	echo $a;
+}
+$a = 2;
+test();</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Variables</h2>
+	<pre><code>&lt;?php
+$a = 1;
+function test()
+{
+	global $a;
+	echo $a;
+}
+$a = 2;
+test();</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Variables</h2>
+	<pre><code>&lt;?php
+$a = 1;
+$b = 2;
+
+function sum()
+{
+	global $a, $b;
+
+	$b = $a + $b;
+}
+sum();
+echo $b;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Variables</h2>
+	<pre><code>&lt;?php
+function test()
+{
+	$a = 0;
+	echo $a;
+	$a++;
+}
+test();
+test();</code></pre>
+	<pre><code>&lt;?php
+function test()
+{
+	static $a = 0;
+	echo $a;
+	$a++;
+}
+test();
+test();</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Constants</h2>
+	<pre><code>&lt;?php
+define('ALICE', 'alice');
+define('BOB_BELL', 'bob bell');</code></pre>
+	<pre><code>&lt;?php
+const CAROL_CHAPLIIN;</code></pre>
+	<p>The above is supported since PHP 5.4.</p>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>String Operators</h3>
+	<pre><code>&lt;?php
+$a = 'Hello ';
+$b = $a . 'World!';</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Arithmetic Operators</h3>
+	<ul>
+		<li>-$a</li>
+		<li>$a + $b</li>
+		<li>$a - $b</li>
+		<li>$a * $b</li>
+		<li>$a / $b</li>
+		<li>$a % $b</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Array Operators</h3>
+	<ul>
+		<li>$a + $b</li>
+		<li>$a == $b</li>
+		<li>$a === $b</li>
+		<li>$a != $b</li>
+		<li>$a &lt;&gt; $b</li>
+		<li>$a !== $b</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Array Operators</h3>
+	<pre><code>&lt;?php
+$a = array(
+	'apple',
+	'banana'
+);
+$b = array(
+	'pear',
+	'strawberry',
+	'cherry'
+);
+$c = $a + $b;
+var_dump($c);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Array Operators</h3>
+	<pre><code>&lt;?php
+$a = array(
+	'a' =&gt; 'apple',
+	'b' =&gt; 'banana'
+);
+$b = array(
+	'a' =&gt; 'pear',
+	'b' =&gt; 'strawberry',
+	'c' =&gt; 'cherry'
+);
+$c = $a + $b;
+var_dump($c);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Comparison Operators</h3>
+	<ul>
+		<li>$a == $b</li>
+		<li>$a === $b</li>
+		<li>$a != $b</li>
+		<li>$a &lt;&gt; $b</li>
+		<li>$a !== $b</li>
+		<li>$a &lt; $b</li>
+		<li>$a &gt; $b</li>
+		<li>$a &lt;= $b</li>
+		<li>$a &gt;= $b</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Logical Operators</h3>
+	<ul>
+		<li>$a and $b</li>
+		<li>$a or $b</li>
+		<li>$a xor $b</li>
+		<li>! $a</li>
+		<li>$a &amp;&amp; $b</li>
+		<li>$a || $b</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Incrementing/Decrementing Operators</h3>
+	<ul>
+		<li>++$a</li>
+		<li>$a++</li>
+		<li>--$a</li>
+		<li>$a--</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Assignment Operators</h3>
+	<ul>
+		<li>$a = $b</li>
+		<li>$a += $b</li>
+		<li>$a -= $b</li>
+		<li>$a *= $b</li>
+		<li>$a /= $b</li>
+		<li>$a .= $b</li>
+		<li>$a %= $b</li>
+		<li>$a &= $b</li>
+		<li>$a |= $b</li>
+		<li>$a ^= $b</li>
+		<li>$a &lt;&lt;= $b</li>
+		<li>$a &gt;&gt;= $b</li>
+		<li>$a =&gt; $b</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Bitwise Operators</h3>
+	<ul>
+		<li>$a &amp; $b</li>
+		<li>$a | $b</li>
+		<li>$a ^ $b</li>
+		<li>~ $a</li>
+		<li>$a &lt;&lt; $b</li>
+		<li>$a &gt;&gt; $b</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Operators</h2>
+	<h3>Other Operators</h3>
+	<ul>
+		<li>$value = @$cache[$key];</li>
+		<li>$my_file = @file ('non_existent_file');</li>
+		<li>$output = `ls -al`;</li>
+		<li>instanceof: talk about it later.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Branch</h3>
+	<pre><code>&lt;?php
+if ($a &gt; $b) {
+	echo 'a is bigger than b';
+} elseif ($a === $b) {
+	echo 'a is equal to b';
+} else {
+	echo 'a is smaller than b';
+}</code></pre>
+	<pre><code>&lt;?php
+if ($a $gt; $b):
+	echo 'a is bigger than b';
+elseif ($a === $b):
+	echo 'a is equal to b';
+else:
+	echo 'a is smaller than b';
+endif;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Branch</h3>
+	<pre><code>&lt;?php
+switch ($i) {
+	case 0:
+		echo 'i equals 0';
+		break;
+	case 1:
+		echo 'i equals 1';
+		break;
+	case 2:
+		echo 'i equals 2';
+		break;
+	default:
+		echo 'i is not equal to 0, 1 or 2';
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Branch</h3>
+	<pre><code>&lt;?php
+switch ($i):
+	case 0:
+		echo 'i equals 0';
+		break;
+	case 1:
+		echo 'i equals 1';
+		break;
+	case 2:
+		echo 'i equals 2';
+		break;
+	default:
+		echo 'i is not equal to 0, 1 or 2';
+endswitch;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Branch</h3>
+	<pre><code>&lt;?php
+switch ($i) {
+	case 0:
+	case 1:
+	case 2:
+		echo 'i equals to 0, 1 or 2';
+		break;
+	default:
+		echo 'i is not equal to 0, 1 or 2';
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Branch</h3>
+	<pre><code>&lt;?php
+switch ($i % 2) {
+	case -1:
+		echo '$i is a negative odd number';
+		break;
+	case 0:
+		echo '$i is an even number';
+		break;
+	case 1:
+		echo '$i is a positive odd number';
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Branch</h3>
+	<pre><code>&lt;?php
+switch ($i % 2) {
+	case -1:
+	case 1:
+		echo '$i is an odd number';
+		break;
+	case 0:
+		echo '$i is an even number';
+		break;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Branch</h3>
+	<pre><code>&lt;?php
+if ($i % 2 == 1 || $i % 2 == -1) {
+	echo '$i is an odd number';
+} else if ($i % 2 == 0) {
+	echo '$i is an even number';
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Branch</h3>
+	<pre><code>&lt;?php
+switch ($i % 2) {
+	case '-1':
+	case '1':
+		echo '$i is an odd number';
+		break;
+	case '0':
+		echo '$i is an even number';
+		break;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+foreach ($items as $item) {
+	echo $item;
+}</code></pre>
+	<pre><code>&lt;?php
+foreach ($items as $item):
+	echo $item;
+endforeach;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+foreach ($names as $alias =&gt; $name) {
+	$names[$alias] = 'St. ' . $name;
+}</code></pre>
+	<pre><code>&lt;?php
+foreach ($names as $alias =&gt; $name):
+	$names[$alias] = 'St. ' . $name;
+endforeach;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+foreach ($names as &amp;$name) {
+	$name = 'St. ' . $name;
+}</code></pre>
+	<pre><code>&lt;?php
+foreach ($names as &amp;$name):
+	$name = 'St. ' . $name;
+endforeach;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+foreach ($names as &amp;$name) {
+	$name = 'St. ' . $name;
+}
+$name = null;
+var_dump($names);</code></pre>
+	<pre><code>&lt;?php
+foreach ($names as &amp;$name) {
+	$name = 'St. ' . $name;
+}
+unset($name);
+$name = null;
+var_dump($names);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+for ($i = 1; $i &lt;= 10; $i++) {
+	echo $i;
+}</code></pre>
+	<pre><code>&lt;?php
+for ($i = 1; $i &lt;= 10; $i++):
+	echo $i;
+endfor;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+while ($i &lt;= 10) {
+	echo $i++;
+}</code></pre>
+	<pre><code>&lt;?php
+while ($i &lt;= 10):
+	echo $i++;
+endwhile;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+do {
+	echo $i++;
+} while ($i &lt; 10);</code></pre>
+</section>
+
+<section class="slide" id="tree">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+$tree = array(
+	'b' =&gt; array(
+		'd' =&gt; 0,
+		'e' =&gt; array(
+			'i' =&gt; 1,
+			'j' =&gt; 2
+		),
+		'f' =&gt; 3
+	),
+	'c' =&gt; array(
+		'g' =&gt; 4,
+		'h' =&gt; 5
+	),
+	'd' =&gt; 6
+);</code></pre>
+	<p>How do you get all the numbers (0, 1, 2, 3, 4, 5, 6) from the tree?</p>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+$nodes = array($tree);
+$leaves = array();
+do {
+	$node = array_shift($nodes);
+	foreach ($node as $child) {
+		if (!is_array($child)) {
+			$leaves[] = $child;
+		} else {
+			$nodes[] = $child;
+		}
+	}
+} while ( !empty($nodes) );
+var_dump($leaves);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Loop</h3>
+	<pre><code>&lt;?php
+$nodes = array($tree);
+$leaves = array();
+for ($nodes = array($tree); !empty($nodes); ) {
+	$node = array_shift($nodes);
+	foreach ($node as $child) {
+		if (!is_array($child)) {
+			$leaves[] = $child;
+		} else {
+			$nodes[] = $child;
+		}
+	}
+}
+var_dump($leaves);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Alternative syntax</h3>
+	<pre><code>&lt;ul&gt;
+&lt;?php
+foreach ($people as $person) {
+	echo '&lt;li&gt;', $person->name, '&lt;/li&gt;';
+}
+?&gt;
+&lt;/ul&gt;</code></pre>
+	<pre><code>&lt;ul&gt;
+&lt;?php foreach ($people as $person): ?&gt;
+	&lt;li&gt;&lt;?= $person->name; ?&gt;&lt;/li&gt;
+&lt;?php foreach; ?&gt;
+&lt;/ul&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Alternative syntax</h3>
+	<pre><code>&lt;ul&gt;
+&lt;?php foreach ($people as $person) { ?&gt;
+	&lt;li&gt;&lt;?= $person->name; ?&gt;&lt;/li&gt;
+&lt;?php } ?&gt;
+&lt;/ul&gt;</code></pre>
+	<pre><code>&lt;ul&gt;
+&lt;?php foreach ($people as $person): ?&gt;
+	&lt;li&gt;&lt;?= $person->name; ?&gt;&lt;/li&gt;
+&lt;?php foreach; ?&gt;
+&lt;/ul&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Continue</h3>
+	<pre><code>&lt;?php
+foreach ($names as $alias =&gt; $name) {
+	if ($alias !== 'alice') {
+		if ($alias !== 'bob') {
+			if ($alias !== 'carol') {
+				echo $name;
+			}
+		}
+	}
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Continue</h3>
+	<pre><code>&lt;?php
+foreach ($names as $alias =&gt; $name) {
+	if ($alias === 'alice') {
+		continue;
+	}
+	if ($alias === 'bob') {
+		continue;
+	}
+	if ($alias === 'carol') {
+		continue;
+	}
+	echo $name;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Continue</h3>
+	<pre><code>&lt;?php
+$i = 0;
+while ($i++ &lt; 5) {
+	echo 'Outer\n';
+	while (1) {
+		echo 'Middle\n';
+		while (1) {
+			echo 'Inner\n';
+			continue 3;
+		}
+		echo 'This never gets output.\n';
+	}
+	echo 'Neither does this.\n';
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Break</h3>
+	<pre><code>&lt;?php
+$alice_index = null;
+foreach ($names as $index =&gt; $name) {
+	if ($alias !== 'alice') {
+		continue;
+	}
+	$alice_index = $index;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Break</h3>
+	<pre><code>&lt;?php
+$alice_index = null;
+foreach ($names as $index =&gt; $name) {
+	if ($alias !== 'alice') {
+		continue;
+	}
+	$alice_index = $index;
+	break;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Break</h3>
+	<pre><code>&lt;?php
+function index_of($names, $search_name)
+{
+	foreach ($names as $index =&gt; $name) {
+		if ($name !== $search_name) {
+			continue;
+		}
+		return $index;
+	}
+
+	return null;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Break</h3>
+	<pre><code>&lt;?php
+$i = 0;
+while ($i++ &lt; 5) {
+	echo "Outer\n";
+	while (1) {
+		echo "Middle\n";
+		while (1) {
+			echo "Inner\n";
+			break 2;
+		}
+		echo "This never gets output.\n";
+	}
+	echo "Neither does this. Really?\n";
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Break</h3>
+	<pre><code>&lt;?php
+for ($count = 0; $count &lt; 3; $count++) {
+	for ($number = 0; $number &lt; 4; $number++) {
+		$sum = $number + $count;
+		switch ($sum % 2) {
+			case 0:
+				echo 'It is even.';
+				break;
+			case 1:
+				echo 'It is odd.';
+		}
+		echo ' The sum is ', $sum, PHP_EOL;
+		echo 'In the loop of number', PHP_EOL;
+	}
+	echo 'In the loop of count', PHP_EOL;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Break</h3>
+	<pre><code>&lt;?php
+for ($count = 0; $count &lt; 3; $count++) {
+	for ($number = 0; $number &lt; 4; $number++) {
+		$sum = $number + $count;
+		switch ($sum % 2) {
+			case 0:
+				echo 'It is even.';
+				continue;
+			case 1:
+				echo 'It is odd.';
+		}
+		echo ' The sum is ', $sum, PHP_EOL;
+		echo 'In the loop of number', PHP_EOL;
+	}
+	echo 'In the loop of count', PHP_EOL;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Goto</h3>
+	<pre><code>&lt;?php
+goto a;
+echo 'Foo';
+a:
+echo 'Bar';</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Goto</h3>
+	<pre><code>&lt;?php
+function user_update($old_email, $new_email)
+{
+	$success = google_update_user($old_email, $new_email);
+	if (!$success) {
+		goto failure_google;
+	}
+	$success = mozilla_update_user($old_email, $new_email);
+	if (!$success) {
+		goto failure_mozilla;
+	}
+	$success = yahoo_update_user($old_email, $new_email);
+	if (!$success) {
+		goto failure_yahoo;
+	}
+
+	return true;
+
+failure_yahoo:
+	mozilla_update_user($new_email, $old_email);
+failure_mozilla:
+	google_update_user($new_email, $old_email);
+failure_google:
+	return false;
+}</code></pre>
+	<p>
+		<a href="https://gist.github.com/anonymous/5637062#file-goto-php">
+			Open Gist.
+		</a>
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Goto</h3>
+	<pre><code>&lt;?php
+function user_update($old_email, $new_email)
+{
+	$success = google_update_user($old_email, $new_email);
+	if (!$success) {
+		return false;
+	}
+	$success = mozilla_update_user($old_email, $new_email);
+	if (!$success) {
+		google_update_user($new_email, $old_email);
+		return false;
+	}
+	$success = yahoo_update_user($old_email, $new_email);
+	if (!$success) {
+		mozilla_update_user($new_email, $old_email);
+		google_update_user($new_email, $old_email);
+		return false;
+	}
+
+	return true;
+}</code></pre>
+	<p>
+		<a href="https://gist.github.com/anonymous/5637224#file-vs-goto-php">
+			Open Gist.
+		</a>
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<pre><code>&lt;?php
+require 'User.php';</code></pre>
+	<p>The script stops rnning if file doesn't exist. You usually require
+	classes, functions.</p>
+	<pre><code>&lt;?php
+include 'config.php';</code></pre>
+	<p>The script keeps running if file doesn't exist. You usually include
+	config files or platform-dependant helper codes.</p>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<pre><code>&lt;?php
+require_once 'User.php';</code></pre>
+	<p>PHP will help you require the file only once. No matter how many times
+	you have called require_once. This prevents duplicated class / function
+	declaration.</p>
+	<pre><code>&lt;?php
+include_once 'config.php';</code></pre>
+	<p>PHP will help you include the file only once. No matter how many times
+	you have called include_once. This prevents duplicated class / function
+	declaration.</p>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<h4>Without path</h4>
+	<ol>
+		<li>include_path</li>
+		<li>the calling script's own directory</li>
+		<li>the current working directory</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<pre><code>&lt;?php
+$color = 'green';
+$fruit = 'apple';</code></pre>
+	<p>The above is vars.php.</p>
+	<pre><code>&lt;?php
+echo "A $color $fruit";
+include 'vars.php';
+echo "A $color $fruit";
+</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<pre><code>&lt;?php
+$color = 'green';
+$fruit = 'apple';</code></pre>
+	<p>The above is vars.php.</p>
+	<pre><code>&lt;?php
+function foo()
+{
+	include 'vars.php';
+	echo "A $color $fruit";
+}
+foo();
+echo "A $color $fruit";</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<pre><code class="bad-practice">&lt;?php
+include 'http://www.example.com/file.php?foo=1&amp;bar=2';</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<pre><code>&lt;?php
+if (include('vars.php') == 'OK') {
+	echo 'OK';
+}
+
+if ((include 'vars.php') == 'OK') {
+	echo 'OK';
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<pre><code>&lt;?php
+$var = 'PHP';
+return $var;
+</code></pre>
+	<p>The above is return.php</p>
+	<pre><code>&lt;?php
+$var = 'PHP';
+</code></pre>
+	<p>The above is noreturn.php</p>
+	<pre><code>&lt;?php
+$foo = include 'return.php';
+echo $foo;
+$bar = include 'noreturn.php';
+echo $bar;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>Include / Require</h3>
+	<pre><code class="bad-practice">&lt;?php
+$string = get_include_contents('somefile.php');
+
+function get_include_contents($filename) {
+	if (is_file($filename)) {
+		ob_start();
+		include $filename;
+		return ob_get_clean();
+	}
+	return false;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>declare</h3>
+	<h3>tick</h3>
+	<pre><code>&lt;?php
+declare (ticks = n) {
+	// entire script here
+}</code></pre>
+	<pre><code>&lt;?php
+declare(ticks = n);
+// entire script here</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>declare</h3>
+	<h3>tick</h3>
+	<pre><code>&lt;?php
+register_tick_function(function () {
+	echo memory_get_usage(), PHP_EOL;
+});
+
+declare(ticks = 1) {
+	$a = array(1, 2, 3, 4, 5, 6);
+
+	$b =&amp; $a;
+	$b[0] = 0;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Control Structures</h2>
+	<h3>declare</h3>
+	<h3>encoding</h3>
+	<p>read the manual by yourself</p>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function foo($arg_1, $arg_2, /* ..., */ $arg_n)
+{
+	echo "Example function.\n";
+	return $retval;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function sum($arg_1, $arg_2, $arg_3)
+{
+	$sum = $arg_1 + $arg_2 + $arg_3;
+	return $sum;
+}
+sum(1, 2, 3);</code></pre>
+	<pre><code>&lt;?php
+sum(1, 2, 3);
+function sum($arg_1, $arg_2, $arg_3)
+{
+	$sum = $arg_1 + $arg_2 + $arg_3;
+	return $sum;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+if (true) {
+	function sum($arg_1, $arg_2, $arg_3)
+	{
+		$sum = $arg_1 + $arg_2 + $arg_3;
+		return $sum;
+	}
+}
+sum(1, 2, 3);</code></pre>
+	<pre><code>&lt;?php
+sum(1, 2, 3);
+if (true) {
+	function sum($arg_1, $arg_2, $arg_3)
+	{
+		$sum = $arg_1 + $arg_2 + $arg_3;
+		return $sum;
+	}
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function sum($arg_1, $arg_2, $arg_3)
+{
+	$sum = $arg_1 + $arg_2 + $arg_3;
+	return $sum;
+}
+sum(1, 2, 3);</code></pre>
+	<pre><code>&lt;?php
+function sum($arg_1, $arg_2, $arg_3)
+{
+	$sum = $arg_1 + $arg_2 + $arg_3;
+	return $sum;
+}
+sum(1, 2);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function foo()
+{
+	function bar()
+	{
+		echo "I don't exist until foo() is called.\n";
+	}
+}
+foo();
+bar();</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code class="bad-practice">&lt;?php
+function hello()
+{
+	echo 'hello';
+}
+HELLO();</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<p>
+		<a href="../../php-2013-5-15/index.html#tree">
+			How do you get all the numbers (0, 1, 2, 3, 4, 5, 6) from the tree?
+		</a>
+	</p>
+	<pre><code>&lt;?php
+function get_leaves($node)
+{
+	$leaves = array();
+	foreach ($node as $child) {
+		if (!is_array($child)) {
+			$leaves[] = $child;
+		} else {
+			$child_leaves = get_leaves($child);
+			array_splice($leaves, -1, 0, $child_leaves);
+		}
+	}
+	return $leaves;
+}
+$$leaves = get_leaves($tree);
+var_dump($$leaves);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function add_some_extra(&amp;$string)
+{
+	$string .= 'and something extra.';
+}
+$str = 'This is a string, ';
+add_some_extra($str);
+echo $str;
+</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function make_coffee($container, $type = 'cappuccino')
+{
+	return "Making a $container of $type.\n";
+}
+echo make_coffee('cup');
+echo make_coffee('cup', null);
+echo make_coffee('cup', 'espresso');</code></pre>
+	<pre><code>&lt;?php
+function make_coffee($type = 'cappuccino', $container)
+{
+	return "Making a $container of $type.\n";
+}
+echo make_coffee('cup');
+echo make_coffee(null, 'cup');
+echo make_coffee('espresso', 'cup');</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function foo()
+{
+	$arguments = func_get_args();
+	$argument_number = func_num_args();
+	echo $argument_number === count($arguments);
+	echo $arguments[0] === func_get_arg(0);
+	echo $arguments[1] === func_get_arg(1);
+	echo $arguments[2] === func_get_arg(2);
+}
+foo(1, 2, 3);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function small_numbers()
+{
+	return array(0, 1, 2);
+}
+$numbers = small_numbers();
+$zero = $numbers[0];
+$one = $numbers[1];
+$two = $numbers[2];</code></pre>
+	<pre><code>&lt;?php
+function small_numbers()
+{
+	return array(0, 1, 2);
+}
+list($zero, $one, $two) = small_numbers();</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function get_users()
+{
+	static $users;
+	if ($users === null) {
+		$users = mozilla_get_users();
+	}
+	return $users;
+}
+$users = get_users();
+function update_user($old_email, $new_email)
+{
+	mozilla_update_user($old_email, $new_email);
+}
+$users = get_users();</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function &amp;get_users()
+{
+	static $users;
+	if ($users === null) {
+		$users = mozilla_get_users();
+	}
+	return $users;
+}
+$users = get_users();
+function update_user($old_email, $new_email)
+{
+	mozilla_update_user($old_email, $new_email);
+	$users =&amp; get_users();
+	$users[$new_email] = $users[$old_email];
+	unset($users[$old_email]);
+}
+$users = get_users();
+</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code class="bad-practice">&lt;?php
+function foo() {
+	echo 'hello';
+}
+$func = 'foo';
+$func();</code></pre>
+	<p>Read the chapter about variable functions by yourself.</p>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code class="bad-practice">&lt;?php
+class Animal
+{
+	function walk()
+	{
+		echo 'An animal is walking.';
+	}
+}
+$cat = new Animal();
+$method = 'walk';
+$cat-&gt;$method();</code></pre>
+	<p>Read the chapter about variable functions by yourself.</p>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+$number_compare = function($low, $high) {
+	return $low - $high;
+};
+$number_compare(1, 2);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function find_largest_number($numbers)
+{
+	$largest = null;
+	foreach ($numbers as $number) {
+		if ($largest === null) {
+			$largest = $number;
+			continue;
+		}
+		if ($largest - $number &gt;= 0) {
+			continue;
+		}
+		$largest = $number;
+	}
+	return $largest;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function find_largest_string($strings) {
+	$largest = null;
+	foreach ($strings as $string) {
+		if ($largest === null) {
+			$largest = $string;
+			continue;
+		}
+		if (strlen($largest) - strlen($string) &gt;= 0) {
+			continue;
+		}
+		$largest = $string;
+	}
+	return $largest;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function find_largest($items, $on_compare)
+{
+	$largest = null;
+	foreach ($items as $item) {
+		if ($largest === null) {
+			$largest = $item;
+			continue;
+		}
+		if ($on_compare($largest, $item) &gt;= 0) {
+			continue;
+		}
+		$largest = $item;
+	}
+	return $largest;
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+$numbers = array(2, 3, 1, 4);
+find_largest($numbers, $number_compare);</code></pre>
+	<pre><code>&lt;?php
+$numbers = array('aa', 'aaa', 'a', 'aaaa');
+find_largest($numbers, function ($low, $high) {
+	return strlen($low) - strlen($high);
+});</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+$divisor = 2;
+$divide = function ($dividend) use($divisor) {
+	return $dividend / $divisor;
+}
+echo $divide(6);
+$divisor = 3;
+echo $divide(6);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+$greeting = 'hello';
+$switch_language = function () use($greeting) {
+	$greeting = $greeting === 'hello' ? 'hola' : 'hello';
+}
+echo $greeting;
+$switch_language();
+echo $greeting;</code></pre>
+	<pre><code>&lt;?php
+$greeting = 'hello';
+$switch_language = function () use(&amp;$greeting) {
+	$greeting = $greeting === 'hello' ? 'hola' : 'hello';
+}
+echo $greeting;
+$switch_language();
+echo $greeting;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+$greeting = 'hello';</code></pre>
+	<p>The above is pollution.php</p>
+	<pre><code>&lt;?php
+$greeting = 'hola';
+require 'pollution.php';
+echo $greeting;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+call_user_func(function () {
+	$greeting = 'hello';
+});</code></pre>
+	<p>The above is no-pollution.php</p>
+	<pre><code>&lt;?php
+$greeting = 'hola';
+require 'no-pollution.php';
+echo $greeting;
+</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function array_double($items)
+{
+	foreach ($items as $item_index =&gt; $item) {
+		$items[$item_index] = $item * 2;
+	}
+
+	return $items;
+}
+$items = 4;
+array_double($items);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Functions</h2>
+	<pre><code>&lt;?php
+function array_double(array $items)
+{
+	foreach ($items as $item_index =&gt; $item) {
+		$items[$item_index] = $item * 2;
+	}
+
+	return $items;
+}
+$items = 4;
+array_double($items);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+}</code></pre>
+	<p>Bird is a class.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+}
+$bird = new Bird();</code></pre>
+	<p>$bird is an object.</p>
+	<p>$bird is an instance of Bird.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+	const FOOD = 'rice';
+
+	public static function getNumber()
+	{
+	}
+	public function getAge()
+	{
+	}
+}
+Bird::FOOD;
+Bird::getNumber();
+$bird = new Bird();
+$bird-&gt;getAge();</code></pre>
+	<p>FOOD is a class constant. Access it through the :: operator.</p>
+	<p>getNumber and getAge are both methods.</p>
+	<p>getNumber is a class method. Access it through the :: operator.</p>
+	<p>getAge is an instance method. Access it through the -&gt; operator.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+	private static $number;
+	private $age = null;
+
+	public static function getNumber()
+	{
+		return self::$number;
+	}
+	public function getAge()
+	{
+		return $this-&gt;age;
+		// return self::$number;
+	}
+}</code></pre>
+	<p>$number is a <strong>class property</strong>.</p>
+	<p>$age is an <strong>instance property</strong>.</p>
+	<p>To refer to the class in a method, use <strong>self</strong>.</p>
+	<p>To refer to the specific instance in a method, use <strong>$this</strong>.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+	private $age;
+
+    public function __construct($age)
+    {
+        $this-&gt;age = $age;
+    }
+}
+
+$alice = new Bird(4);
+$bob = new Bird(5);
+var_dump($alice, $bob);</code></pre>
+	<p>Use <strong>__construct</strong> to define a constructor.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre class="bad-practice"><code>&lt;?php
+class Bird
+{
+	private $age;
+
+    public function Bird($age)
+    {
+        $this-&gt;age = $age;
+    }
+}
+
+$alice = new Bird(4);
+$bob = new Bird(5);
+var_dump($alice, $bob);</code></pre>
+	<p>Use <strong>__construct</strong> to define a constructor.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+	private $age = 0;
+
+	public function getAge()
+	{
+		return $this-&gt;age;
+	}
+
+	public function setAge($age)
+	{
+		$this-&gt;age = $age;
+	}
+}</code></pre>
+	<pre><code>&lt;?php
+class Kiwi extends Bird
+{
+	public function celebrateBirthday()
+	{
+		$this-&gt;setAge($this-&gt;getAge() + 1);
+	}
+}</code></pre>
+	<p>Use <strong>extends</strong> to access methods and properties of the parent class.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+	private $age = 0;
+
+	protected function getAge()
+	{
+		return $this-&gt;age;
+	}
+
+	protected function setAge($age)
+	{
+		$this-&gt;age = $age;
+	}
+}</code></pre>
+	<pre><code>&lt;?php
+class Kiwi extends Bird
+{
+	public function celebrateBirthday()
+	{
+		$this-&gt;setAge($this-&gt;getAge() + 1);
+	}
+}</code></pre>
+	<p>Use <strong>protected</strong> to make a function only available to its child classes.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+	private $age = 0;
+
+	final protected function getAge()
+	{
+		return $this-&gt;age;
+	}
+}</code></pre>
+	<pre><code>&lt;?php
+class Kiwi extends Bird
+{
+	public function getAge()
+	{
+		return null;
+	}
+}</code></pre>
+	<p>Use <strong>final</strong> if you don't want a method to be overridden
+	by its child classes.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+abstract class Bird
+{
+	private $age = 0;
+
+	protected function getAge()
+	{
+		return $this-&gt;age;
+	}
+
+	abstract protected function setAge($age);
+}</code></pre>
+	<pre><code>&lt;?php
+class Kiwi extends Bird
+{
+	public function getAge()
+	{
+		return parent::getAge() - 1;
+	}
+
+	public function setAge($age)
+	{
+		$this-&gt;age = $age;
+	}
+}</code></pre>
+	<p>Use <strong>parent</strong> if you want to invoke a method of the parent
+	class.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+abstract class Bird
+{
+	private $age = 0;
+
+	protected function getAge()
+	{
+		return $this-&gt;age;
+	}
+
+	abstract protected function setAge($age);
+}</code></pre>
+	<pre><code>&lt;?php
+class Kiwi extends Bird
+{
+	public function getAge()
+	{
+		return parent::getAge() - 1;
+	}
+
+	public function setAge($age)
+	{
+		$this-&gt;age = $age;
+	}
+}</code></pre>
+	<p>Use <strong>abstract</strong> if you want to let child class to define
+	the behaviour.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+interface Flyable
+{
+	const MILES = 500;
+
+	public static function find();
+
+	public function fly();
+}</code></pre>
+	<pre><code>&lt;?php
+class Kiwi implements Flyable
+{
+	public static function find()
+	{
+	}
+
+	public function fly()
+	{
+	}
+}</code></pre>
+	<p>Use <strong>inteface</strong> if you want to make sure a class has all
+	certain methods defined.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>
+class Base {
+	public function sayHello() {
+		echo 'Hello ';
+	}
+}
+
+trait SayWorld {
+	public function sayHello() {
+		parent::sayHello();
+		echo 'World!';
+	}
+}
+
+class MyHelloWorld extends Base {
+	use SayWorld;
+}</code></pre>
+	<p>Since PHP 5.4. Use <strong>trait</strong> if you want to have multiple
+	inheritance</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>
+trait A {
+	public function smallTalk() {
+		echo 'a';
+	}
+	public function bigTalk() {
+		echo 'A';
+	}
+}
+
+trait B {
+	public function smallTalk() {
+		echo 'b';
+	}
+	public function bigTalk() {
+		echo 'B';
+	}
+}
+
+class Talker {
+	use A, B {
+		B::smallTalk insteadof A;
+		A::bigTalk insteadof B;
+	}
+}</code></pre>
+	<p>Since PHP 5.4. Use <strong>instead</strong> to resolve conflict.</p>
+</section>
+
+<section class="slide">
+	<h2>Class</h2>
+	<pre><code>&lt;?php
+abstract class Bird
+{
+}
+class Kiwi extends Bird implements Flyable
+{
+}
+interface Flyable
+{
+}
+function type_hinting(
+	array $array,
+	callable $callable,
+	Bird $bird,
+	Flyable $flyable = null
+) {
+}
+type_hinting(array(), function(){}, new Bird(), new Kiwi());
+type_hinting(array(), 'var_dump', new Kiwi(), new Kiwi());</code></pre>
+	<p>Since PHP 5.4. Use <strong>instead</strong> to resolve conflict.</p>
+</section>
+
+<section class="slide">
+	<h2>Namespace</h2>
+	<pre><code>&lt;?php
+class Bird
+{
+}</code></pre>
+	<p>sharils/bird/Bird.php</p>
+	<pre><code>&lt;?php
+require_once 'sharils/bird/Bird.php';
+
+$bird = new Bird();</code></pre>
+	<p>index.php</p>
+</section>
+
+<section class="slide">
+	<h2>Namespace</h2>
+	<pre><code>&lt;?php
+namespace sharils\bird;
+
+class Bird
+{
+}</code></pre>
+	<p>sharils/bird/Bird.php</p>
+	<pre><code>&lt;?php
+require_once 'sharils/bird/Bird.php';
+
+$bird = new \sharils\bird\Bird();</code></pre>
+	<p>index.php</p>
+</section>
+
+<section class="slide">
+	<h2>Namespace</h2>
+	<p>Using namespaces: Aliasing/Importing - PHP namespaces support three
+	kinds of aliasing or importing: aliasing a class name, aliasing an
+	interface name, and aliasing a namespace name. Note that importing a
+	function or constant is not supported.</p>
+</section>
+
+<section class="slide">
+	<h2>Namespace</h2>
+	<pre><code>&lt;?php
+namespace sharils\bird;
+
+class Bird
+{
+}</code></pre>
+	<p>sharils/bird/Bird.php</p>
+	<pre><code>&lt;?php
+spl_autoload_register(function ($class) {
+    require str_replace('\\', DIRECTORY_SEPARATOR, $class);
+});
+
+$bird = new \sharils\bird\Bird();</code></pre>
+	<p>index.php</p>
+</section>
+
+<section class="slide">
+	<h2>Resources</h2>
+	<ul>
+		<li>
+			<a href="http://codepad.org/?lang=PHP">
+				codepad
+			</a>
+		</li>
+		<li>
+			<a href="http://sandbox.onlinephpfunctions.com/">
+				OnlinePHPFunctions - Test PHP functions online
+			</a>
+		</li>
+		<li>
+			<a href="http://phpconf.tw/">
+				PHPConf Taiwan
+			</a>
+		</li>
+		<li>
+			<a href="http://www.php.net/manual/en/">
+				PHP: Hypertext Preprocessor
+			</a>
+		</li>
+		<li>
+			<a href="http://www.phptherightway.com/">
+				PHP: The Right Way
+			</a>
+		</li>
+	</ul>
+</section>
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery-1.7.2.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="core/deck.core.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
+
+</body>
+</html>

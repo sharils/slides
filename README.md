@@ -94,6 +94,30 @@ git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slide
 xdg-open /tmp/slides/github/index.html
 ```
 
+web development
+---------------
+
+### html ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/web-development-html/html.markdown
+```
+
+### php ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/web-development-php/index.html
+```
+
+### js ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/web-development-js/index.html
+```
+
 javascript.tw
 -------------
 
