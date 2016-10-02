@@ -1,0 +1,58 @@
+prime:
+
+  non-object
+
+object to prime:
+
+  - Prefer valueOf over toString when coercing to prime.
+  
+    Except for Date object, coerce to string in which case.
+
+  - Throw exception if coercion failed.
+
+===:
+
+  - Return false if types are different.
+
+  - Return false if any NaN.
+
+==:
+
+  - Return === if types are the same.
+
+  - Return false if there is null or undefined. Except when both are null or
+    undefined, return true in which case.
+
+    Except when both are null or undefined, return true in which case.
+
+  - Coerce string to number if they are number and string.
+
+  - Compare again with boolean coerced to number if there is boolean.
+
+  - Compare again with object coerced to prime otherwise.
+
+  -   b n s o
+    b - n n n
+    n - - n n
+    s - - - s
+    o - - - -
+    
++:
+
+  - Coerce object to prime if any object.
+
+  - Concatenate with the others coerced to string if any string.
+
+  - Add those two with both coerced to numbers otherwise.
+
+<, >:
+
+  - Coerce object to prime (version without exception) if any object.
+
+  - Compare if both are strings.
+
+  - Compare with both coerced to numbers.
+
+<<, >>:
+
+  - Round toware zero.

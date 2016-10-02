@@ -93,3 +93,78 @@ xdg-open /tmp/slides/openssh/index.html
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
 xdg-open /tmp/slides/github/index.html
 ```
+
+javascript.tw
+-------------
+
+### 2012-12-16 ###
+
+#### QUnit ####
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2012-12-16/qunit/index.html
+```
+
+#### RequireJS ####
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2012-12-16/requirejs/index.html
+```
+
+#### QUnit integrate RequireJS ####
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2012-12-16/qunit-requirejs/index.html
+```
+
+#### Domo ####
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2012-12-16/domo/index.html
+```
+
+#### QUnit, RequireJS and Domo integration ####
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2012-12-16/qunit-requirejs-domo/index.html
+```
+
+### 2013-01-19 ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2013-01-19/tests/index.html
+```
+
+### 2013-04-20 ###
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2013-04-20/README.markdown
+```
+
+#### Use Public Component ####
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2013-04-20/use-component/README.markdown
+```
+
+#### Define Your Component ####
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2013-04-20/component-apple/README.markdown
+```
+
+#### Use Your Component ####
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+xdg-open /tmp/slides/javascript.tw-2013-04-20/component-boy/README.markdown
+```
