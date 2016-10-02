@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Docker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Docker 1.4
+
+Folio
+
+---
+
+class: center, middle
+
+# [Installation](https://docs.docker.com/installation/#installation)
+
+---
+
+class: center, middle
+
+
+## Mac OS X
+
+[Boot2Docker](https://github.com/boot2docker/osx-installer/releases)
+
+## Ubuntu 14.04
+
+	curl -sSL https://get.docker.com/ubuntu/ | sudo sh
+
+## Windows 7 &amp; 8
+
+[Boot2Docker](https://github.com/boot2docker/windows-installer/releases)
+
+---
+
+class: center, middle
+
+# The Good
+
+---
+
+class: center, middle
+
+# Cachable instruction
+
+Image(n + 1) = Image(n) + Instruction
+
+---
+
+class: center
+
+# First run
+
+	$ docker build -t demo .                                      
+	Sending build context to Docker daemon 858.1 kB               
+	Sending build context to Docker daemon                        
+	Step 0 : FROM ubuntu                                          
+	 ---> 9bd07e480c5b                                            
+	Step 1 : MAINTAINER sharils <sharils@users.noreply.github.com>
+	 ---> Running in 63f6e05fe12c                                 
+	 ---> f3be1461cf78                                            
+	Removing intermediate container 63f6e05fe12c                  
+	Step 2 : RUN apt-get install -y curl                          
+	 ---> Running in 10c99534c054                                 
+    ...                                                           
+	 ---> 8950864dc7f0                                            
+	Removing intermediate container 10c99534c054                  
+	Successfully built 8950864dc7f0                               
+
+---
+
+class: center
+
+# Second run
+
+	$ docker build -t demo .                                      
+	Sending build context to Docker daemon 858.1 kB               
+	Sending build context to Docker daemon                        
+	Step 0 : FROM ubuntu                                          
+	 ---> 9bd07e480c5b                                            
+	Step 1 : MAINTAINER sharils <sharils@users.noreply.github.com>
+	 ---> Using cache                                             
+	 ---> f3be1461cf78                                            
+	Step 2 : RUN apt-get install -y curl                          
+	 ---> Using cache                                             
+	 ---> 8950864dc7f0                                            
+	Successfully built 8950864dc7f0                               
+
+---
+
+class: center, middle
+
+# Vagrant:
+
+......
+
+---
+
+class: center, middle
+
+# Low memory footprint
+
+450+ containers on a laptop
+
+---
+
+class: center, middle
+
+# Vagrant:
+
+......
+
+---
+
+class: center, middle
+
+# Easy linkage
+
+	docker run --name mysql    -de MYSQL_ROOT_PASSWORD=Password mysql
+	docker run --link mysql:db -it ubuntu bash                       
+
+???
+
+apt-get install -y mysql-client
+
+mysql -h$DB_PORT_3306_TCP_ADDR -uroot -pPassword
+
+---
+
+class: center, middle
+
+# Vagrant:
+
+......
+
+---
+
+class: center, middle
+
+# Simple mount
+
+	docker run -v /var/tmp/db1 --name m1 -it ubuntu bash
+	docker run --volumes-from m1         -it ubuntu bash
+
+???
+
+ls /var/tmp/db1
+
+touch /var/tmp/db1/hello
+
+ls /var/tmp/db1
+
+---
+
+class: center, middle
+
+# Vagrant:
+
+......
+
+---
+
+class: center, middle
+
+# The Bad
+
+---
+
+class: center, middle
+
+# Lazy services
+
+Services are not started automatically
+
+---
+
+class: center, middle
+
+# Install Apache
+
+	docker run -it --name ubt ubuntu bash
+	apt-get install -y apache2           
+	service --status-all                 
+	exit                                 
+
+---
+
+class: center, middle
+
+# Start container again
+
+	docker start -ai ubt
+	service --status-all
+
+---
+
+class: center, middle
+
+# Vagrant:
+
+	^_^
+
+---
+
+class: center, middle
+
+# Solution
+
+CMD
+
+ENTRYPOINT
+
+supervisord
+
+container linkage
+
+---
+
+class: center, middle
+
+# Vagrant:
+
+	^wwwwwwwwwwwwwwwwwwwwwwww^
+
+---
+
+class: center, middle
+
+# Comparison
+
+---
+
+class: center, middle
+
+# Construct a container
+
+	docker build -t <image-name> .
+	docker run <image-name>       
+
+# Construct a VM
+
+	vagrant init <box-name>
+	vagrant up             
+
+---
+
+class: center, middle
+
+# Login to a container
+
+	docker run -it <image-name> bash
+
+# Login to a VM
+
+	vagrant ssh
+
+---
+
+class: center, middle
+
+# Show all containers
+
+	docker ps -a
+
+# Show all VMs
+
+	vagrant global-status
+
+---
+
+class: center, middle
+
+# Delete a container
+
+	docker rm <container-id>|<container-name>
+
+# Delete a VM
+
+	vagrant destroy -f
+
+---
+
+class: center, middle
+
+# Show all local images
+
+	docker images   
+
+	vagrant box list
+
+---
+
+class: center, middle
+
+# Delete a local image
+
+	docker rmi <image-name>      
+
+	vagrant box remove <box-name>
+
+---
+
+class: center, middle
+
+# Image source
+
+[Docker Hub](https://hub.docker.com/)
+
+[Vagrant Cloud](https://vagrantcloud.com/)
+
+---
+
+class: center, middle
+
+# Description file
+
+Dockerfile
+
+Vagrantfile
+
+---
+
+class: center, middle
+
+# Ansible
+
+---
+
+class: center, middle
+
+# Pre-condition
+
+	$ tree              
+	.                   
+	|-- Dockerfile      
+	|-- Vagrantfile     
+	|-- provisioning    
+	|   |-- playbook.yml
+
+---
+
+class: center, middle
+
+# Dockerfile
+
+	FROM ansible/ubuntu14.04-ansible                                                              
+	ENV PATH /opt/ansible/ansible/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+	ADD provisioning /provisioning                                                                
+	WORKDIR /provisioning                                                                         
+	RUN ansible-playbook playbook.yml -c local                                                    
+
+# Vagrantfile
+
+	Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+	  config.vm.provision "ansible" do |ansible|          
+		ansible.playbook = "provisioning/playbook.yml"    
+	  end                                                 
+	end                                                   
+
+---
+
+class: center, middle
+
+# [Docker's friends](http://blog.docker.com/2014/12/announcing-docker-machine-swarm-and-compose-for-orchestrating-distributed-apps/)
+
+---
+
+class: center, middle
+
+# [Docker Machine](https://github.com/docker/machine)<sup>alpha</sup>
+
+Create Docker hosts on local hypervisors and cloud providers
+
+	machine create -d virtualbox dev                                          
+	machine create -d digitalocean --digitalocean-access-token={token} staging
+
+---
+
+class: center, middle
+
+# [Docker Swarm](https://github.com/docker/swarm/)<sup>alpha</sup>
+
+Control a cluster of Docker hosts and exposes it as a single "virtual" host
+
+	swarm create                                                                              
+	swarm join --discovery token://6856663cdefdec325839a4b7e1de38e8 --addr=<node_ip:2375>     
+	swarm manage --discovery token://6856663cdefdec325839a4b7e1de38e8 -H=<swarm_ip:swarm_port>
+	docker -H <swarm_ip:swarm_port> run ubuntu bash                                           
+
+---
+
+class: center, middle
+
+# Docker Compose<sup>dev</sup>
+
+Assemble multi-container distributed apps
+
+---
+
+class: center, middle
+
+# The End
+
+    </textarea>
+    <script src="../remark/out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
