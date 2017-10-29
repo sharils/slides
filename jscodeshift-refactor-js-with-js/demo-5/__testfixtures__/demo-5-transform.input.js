@@ -1,0 +1,4 @@
+connect(
+  () => a,
+  () => b,
+)(Component);
