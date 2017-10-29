@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jest": "^21.2.1",
+    "jscodeshift": "^0.3.32"
+  }
+}
