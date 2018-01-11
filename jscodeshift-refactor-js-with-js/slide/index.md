@@ -229,7 +229,7 @@ Is there any API reference?
 
 [Yes][1]
 
-[1]: https://hackmd.io/s/Hy8FL6IWZ#api "Link to API reference"
+[1]: https://github.com/sharils/slides/blob/master/jscodeshift-refactor-js-with-js/slide/draft.md#api "Link to API reference"
 
 ----
 
