@@ -1,4 +1,16 @@
+# GPGit
+
+---
+
 # GPG
+
+## GNU Privacy Guard
+
+---
+
+# PGP
+
+## Pretty Good Privacy
 
 ---
 
@@ -173,6 +185,12 @@ diff --git a/hello-gpg b/hello-gpg
 new file mode 100644
 index 0000000..e69de29
 ```
+
+---
+
+# GIT-CRYPT
+
+## Transparent file encryption in git
 
 ---
 
