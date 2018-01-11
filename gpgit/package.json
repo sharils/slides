@@ -4,5 +4,16 @@
   },
   "devDependencies": {
     "prettier": "^1.10.1"
-  }
+  },
+  "name": "gpgit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync --files=*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "AGPL-3.0",
+  "description": "",
+  "private": true
 }
