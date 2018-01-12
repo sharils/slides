@@ -1,5 +1,23 @@
 # slides
 
+## GPGit
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+cd /tmp/slides/gpgit
+yarn
+xdg-open /tmp/slides/gpgit/index.html
+```
+
+## jscodeshift: Refactor JS w/ JS
+
+```sh
+git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
+cd /tmp/slides/jscodeshift
+yarn
+xdg-open /tmp/slides/jscodeshift/slides/index.html
+```
+
 ## 97 Things Every Programmer Should Know
 
 ### 97 things
