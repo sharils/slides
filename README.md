@@ -6,7 +6,7 @@
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
 cd /tmp/slides/gpgit
 yarn
-xdg-open /tmp/slides/gpgit/index.html
+open /tmp/slides/gpgit/index.html
 ```
 
 ## jscodeshift: Refactor JS w/ JS
@@ -15,7 +15,7 @@ xdg-open /tmp/slides/gpgit/index.html
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
 cd /tmp/slides/jscodeshift
 yarn
-xdg-open /tmp/slides/jscodeshift/slides/index.html
+open /tmp/slides/jscodeshift/slides/index.html
 ```
 
 ## 97 Things Every Programmer Should Know
@@ -24,63 +24,63 @@ xdg-open /tmp/slides/jscodeshift/slides/index.html
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/97-things-every-programmer-should-know/index.html
+open /tmp/slides/97-things-every-programmer-should-know/index.html
 ```
 
 ### Part 1
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/97-things-every-programmer-should-know/part-1.html
+open /tmp/slides/97-things-every-programmer-should-know/part-1.html
 ```
 
 ### Part 2
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/97-things-every-programmer-should-know/part-2.html
+open /tmp/slides/97-things-every-programmer-should-know/part-2.html
 ```
 
 ### Part 3
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/97-things-every-programmer-should-know/part-3.html
+open /tmp/slides/97-things-every-programmer-should-know/part-3.html
 ```
 
 ### Part 4
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/97-things-every-programmer-should-know/part-4.html
+open /tmp/slides/97-things-every-programmer-should-know/part-4.html
 ```
 
 ## webpack module bundler
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/webpack/slide.html
+open /tmp/slides/webpack/slide.html
 ```
 
 ## Greasemonkey UserScript
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/greasemonkey-userscript/index.html
+open /tmp/slides/greasemonkey-userscript/index.html
 ```
 
 ## docker
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/docker/index.html
+open /tmp/slides/docker/index.html
 ```
 
 ## Software Patent
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/software-patent/index.html
+open /tmp/slides/software-patent/index.html
 ```
 
 ## Software Development
@@ -89,28 +89,28 @@ xdg-open /tmp/slides/software-patent/index.html
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/cygwin/index.html
+open /tmp/slides/cygwin/index.html
 ```
 
 ### Git
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/git/index.html
+open /tmp/slides/git/index.html
 ```
 
 ### OpenSSH
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/openssh/index.html
+open /tmp/slides/openssh/index.html
 ```
 
 ### Github
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/github/index.html
+open /tmp/slides/github/index.html
 ```
 
 ## web development
@@ -119,21 +119,21 @@ xdg-open /tmp/slides/github/index.html
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/web-development-html/html.markdown
+open /tmp/slides/web-development-html/html.markdown
 ```
 
 ### php
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/web-development-php/index.html
+open /tmp/slides/web-development-php/index.html
 ```
 
 ### js
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/web-development-js/index.html
+open /tmp/slides/web-development-js/index.html
 ```
 
 ## javascript.tw
@@ -144,68 +144,68 @@ xdg-open /tmp/slides/web-development-js/index.html
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2012-12-16/qunit/index.html
+open /tmp/slides/javascript.tw-2012-12-16/qunit/index.html
 ```
 
 #### RequireJS
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2012-12-16/requirejs/index.html
+open /tmp/slides/javascript.tw-2012-12-16/requirejs/index.html
 ```
 
 #### QUnit integrate RequireJS
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2012-12-16/qunit-requirejs/index.html
+open /tmp/slides/javascript.tw-2012-12-16/qunit-requirejs/index.html
 ```
 
 #### Domo
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2012-12-16/domo/index.html
+open /tmp/slides/javascript.tw-2012-12-16/domo/index.html
 ```
 
 #### QUnit, RequireJS and Domo integration
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2012-12-16/qunit-requirejs-domo/index.html
+open /tmp/slides/javascript.tw-2012-12-16/qunit-requirejs-domo/index.html
 ```
 
 ### 2013-01-19
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2013-01-19/tests/index.html
+open /tmp/slides/javascript.tw-2013-01-19/tests/index.html
 ```
 
 ### 2013-04-20
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2013-04-20/README.markdown
+open /tmp/slides/javascript.tw-2013-04-20/README.markdown
 ```
 
 #### Use Public Component
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2013-04-20/use-component/README.markdown
+open /tmp/slides/javascript.tw-2013-04-20/use-component/README.markdown
 ```
 
 #### Define Your Component
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2013-04-20/component-apple/README.markdown
+open /tmp/slides/javascript.tw-2013-04-20/component-apple/README.markdown
 ```
 
 #### Use Your Component
 
 ```sh
 git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-xdg-open /tmp/slides/javascript.tw-2013-04-20/component-boy/README.markdown
+open /tmp/slides/javascript.tw-2013-04-20/component-boy/README.markdown
 ```
