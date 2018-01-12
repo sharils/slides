@@ -1,13 +1,6 @@
 # slides
 
-## GPGit
-
-```sh
-git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-cd /tmp/slides/gpgit
-yarn
-open /tmp/slides/gpgit/index.html
-```
+## [GPGit](http://sharils.github.io/slides/gpgit)
 
 ## jscodeshift: Refactor JS w/ JS
 
