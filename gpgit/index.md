@@ -332,12 +332,12 @@ To unlock with a shared symmetric key instead, specify the path to the symmetric
 
 # Reference
 
-- [https://web.archive.org/web/20171222033413/https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work][1]
+- [Introduction to GPG Encryption and git-crypt - Samsung Open Source Group Blog][1]
 - [Git - Signing Your Work][2]
 - [bash - keyserver timed out when trying to add a GPG public key - Unix & Linux Stack Exchange][3]
 - [git-crypt - transparent file encryption in git][4]
 
-[1]: https://blogs.s-osg.org/introduction-gpg-encryption-git-crypt/
+[1]: https://web.archive.org/web/20180113005646/https://blogs.s-osg.org/introduction-gpg-encryption-git-crypt/
 [2]: https://web.archive.org/web/20171222033413/https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
 [3]: https://web.archive.org/web/20161120004044/http://unix.stackexchange.com:80/questions/75892/keyserver-timed-out-when-trying-to-add-a-gpg-public-key
 [4]: https://www.agwa.name/projects/git-crypt/
