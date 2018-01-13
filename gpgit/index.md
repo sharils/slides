@@ -4,13 +4,13 @@
 
 # GPG
 
-## GNU Privacy Guard
+## GNU GPLv3
 
 ---
 
 # PGP
 
-## Pretty Good Privacy
+## Commercial proprietary software
 
 ---
 
@@ -184,6 +184,33 @@ Date:   Thu Jan 11 23:42:19 2018 +0800
 diff --git a/hello-gpg b/hello-gpg
 new file mode 100644
 index 0000000..e69de29
+```
+
+---
+
+# SIGN ON TAG
+
+```sh
+$ git tag -s 1.0.0 -m 'GPGit 1.0.0' && git show --show-signature 1.0.0 | cat
+tag 1.0.0
+Tagger: sharils <sharils@users.noreply.github.com>
+Date:   Sat Jan 13 09:28:48 2018 +0800
+
+GPGit 1.0.0
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEEJqlGM5RksVxB3xOUOE3cuaxtebUFAlpZYNAACgkQOE3cuaxt
+ebVRwgf/Y7UWSuSHUaFjDUvI2iMb9d1A4vmyIaj0+v+EwIx5DyZ3x4UED+ZJdNnF
+......
+-----END PGP SIGNATURE-----
+
+commit d75aa910811ba18c524e30d1a4e3d6c40b54ee36
+gpg: Signature made Fri Jan 12 00:00:35 2018 CST
+gpg:                using RSA key 26A946339464B15C41DF1394384DDCB9AC6D79B5
+gpg: Good signature from "sharils <sharils@users.noreply.github.com>" [ultimate]
+Author: sharils <sharils@users.noreply.github.com>
+Date:   Fri Jan 12 00:00:35 2018 +0800
+......
 ```
 
 ---
