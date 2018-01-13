@@ -215,6 +215,22 @@ Date:   Fri Jan 12 00:00:35 2018 +0800
 
 ---
 
+# SIGNATURE ON GITHUB
+
+## [COMMITS][1]
+
+[1]: https://github.com/nodejs/node/commits/master
+
+---
+
+# SIGNATURE ON GITHUB
+
+## [TAG][1]
+
+[1]: https://github.com/nodejs/node/tags
+
+---
+
 # GIT-CRYPT
 
 ## Transparent file encryption in git
