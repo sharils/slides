@@ -330,6 +330,10 @@ To unlock with a shared symmetric key instead, specify the path to the symmetric
 
 ---
 
+# [KEYBASE](https://keybase.io/)
+
+---
+
 # Reference
 
 - [Introduction to GPG Encryption and git-crypt - Samsung Open Source Group Blog][1]
