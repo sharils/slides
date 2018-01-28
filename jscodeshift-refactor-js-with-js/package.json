@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "jest": "^21.2.1",
-    "jscodeshift": "^0.3.32",
-    "reveal.js": "^3.6.0"
+    "jscodeshift": "^0.3.32"
   },
   "license": "AGPL-3.0"
 }

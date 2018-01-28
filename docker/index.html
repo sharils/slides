@@ -4,9 +4,9 @@
     <title>Docker</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
-      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
       body { font-family: 'Droid Serif'; }
       h1, h2, h3 {
@@ -68,21 +68,21 @@ class: center
 
 # First run
 
-	$ docker build -t demo .                                      
-	Sending build context to Docker daemon 858.1 kB               
-	Sending build context to Docker daemon                        
-	Step 0 : FROM ubuntu                                          
-	 ---> 9bd07e480c5b                                            
+	$ docker build -t demo .
+	Sending build context to Docker daemon 858.1 kB
+	Sending build context to Docker daemon
+	Step 0 : FROM ubuntu
+	 ---> 9bd07e480c5b
 	Step 1 : MAINTAINER sharils <sharils@users.noreply.github.com>
-	 ---> Running in 63f6e05fe12c                                 
-	 ---> f3be1461cf78                                            
-	Removing intermediate container 63f6e05fe12c                  
-	Step 2 : RUN apt-get install -y curl                          
-	 ---> Running in 10c99534c054                                 
-    ...                                                           
-	 ---> 8950864dc7f0                                            
-	Removing intermediate container 10c99534c054                  
-	Successfully built 8950864dc7f0                               
+	 ---> Running in 63f6e05fe12c
+	 ---> f3be1461cf78
+	Removing intermediate container 63f6e05fe12c
+	Step 2 : RUN apt-get install -y curl
+	 ---> Running in 10c99534c054
+    ...
+	 ---> 8950864dc7f0
+	Removing intermediate container 10c99534c054
+	Successfully built 8950864dc7f0
 
 ---
 
@@ -90,18 +90,18 @@ class: center
 
 # Second run
 
-	$ docker build -t demo .                                      
-	Sending build context to Docker daemon 858.1 kB               
-	Sending build context to Docker daemon                        
-	Step 0 : FROM ubuntu                                          
-	 ---> 9bd07e480c5b                                            
+	$ docker build -t demo .
+	Sending build context to Docker daemon 858.1 kB
+	Sending build context to Docker daemon
+	Step 0 : FROM ubuntu
+	 ---> 9bd07e480c5b
 	Step 1 : MAINTAINER sharils <sharils@users.noreply.github.com>
-	 ---> Using cache                                             
-	 ---> f3be1461cf78                                            
-	Step 2 : RUN apt-get install -y curl                          
-	 ---> Using cache                                             
-	 ---> 8950864dc7f0                                            
-	Successfully built 8950864dc7f0                               
+	 ---> Using cache
+	 ---> f3be1461cf78
+	Step 2 : RUN apt-get install -y curl
+	 ---> Using cache
+	 ---> 8950864dc7f0
+	Successfully built 8950864dc7f0
 
 ---
 
@@ -134,7 +134,7 @@ class: center, middle
 # Easy linkage
 
 	docker run --name mysql    -de MYSQL_ROOT_PASSWORD=Password mysql
-	docker run --link mysql:db -it ubuntu bash                       
+	docker run --link mysql:db -it ubuntu bash
 
 ???
 
@@ -196,9 +196,9 @@ class: center, middle
 # Install Apache
 
 	docker run -it --name ubt ubuntu bash
-	apt-get install -y apache2           
-	service --status-all                 
-	exit                                 
+	apt-get install -y apache2
+	service --status-all
+	exit
 
 ---
 
@@ -252,12 +252,12 @@ class: center, middle
 # Construct a container
 
 	docker build -t <image-name> .
-	docker run <image-name>       
+	docker run <image-name>
 
 # Construct a VM
 
 	vagrant init <box-name>
-	vagrant up             
+	vagrant up
 
 ---
 
@@ -301,7 +301,7 @@ class: center, middle
 
 # Show all local images
 
-	docker images   
+	docker images
 
 	vagrant box list
 
@@ -311,7 +311,7 @@ class: center, middle
 
 # Delete a local image
 
-	docker rmi <image-name>      
+	docker rmi <image-name>
 
 	vagrant box remove <box-name>
 
@@ -347,11 +347,11 @@ class: center, middle
 
 # Pre-condition
 
-	$ tree              
-	.                   
-	|-- Dockerfile      
-	|-- Vagrantfile     
-	|-- provisioning    
+	$ tree
+	.
+	|-- Dockerfile
+	|-- Vagrantfile
+	|-- provisioning
 	|   |-- playbook.yml
 
 ---
@@ -360,25 +360,25 @@ class: center, middle
 
 # Dockerfile
 
-	FROM ansible/ubuntu14.04-ansible                                                              
+	FROM ansible/ubuntu14.04-ansible
 	ENV PATH /opt/ansible/ansible/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-	ADD provisioning /provisioning                                                                
-	WORKDIR /provisioning                                                                         
-	RUN ansible-playbook playbook.yml -c local                                                    
+	ADD provisioning /provisioning
+	WORKDIR /provisioning
+	RUN ansible-playbook playbook.yml -c local
 
 # Vagrantfile
 
 	Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	  config.vm.provision "ansible" do |ansible|          
-		ansible.playbook = "provisioning/playbook.yml"    
-	  end                                                 
-	end                                                   
+	  config.vm.provision "ansible" do |ansible|
+		ansible.playbook = "provisioning/playbook.yml"
+	  end
+	end
 
 ---
 
 class: center, middle
 
-# [Docker's friends](http://blog.docker.com/2014/12/announcing-docker-machine-swarm-and-compose-for-orchestrating-distributed-apps/)
+# [Docker's friends](https://blog.docker.com/2014/12/announcing-docker-machine-swarm-and-compose-for-orchestrating-distributed-apps/)
 
 ---
 
@@ -388,7 +388,7 @@ class: center, middle
 
 Create Docker hosts on local hypervisors and cloud providers
 
-	machine create -d virtualbox dev                                          
+	machine create -d virtualbox dev
 	machine create -d digitalocean --digitalocean-access-token={token} staging
 
 ---
@@ -399,10 +399,10 @@ class: center, middle
 
 Control a cluster of Docker hosts and exposes it as a single "virtual" host
 
-	swarm create                                                                              
-	swarm join --discovery token://6856663cdefdec325839a4b7e1de38e8 --addr=<node_ip:2375>     
+	swarm create
+	swarm join --discovery token://6856663cdefdec325839a4b7e1de38e8 --addr=<node_ip:2375>
 	swarm manage --discovery token://6856663cdefdec325839a4b7e1de38e8 -H=<swarm_ip:swarm_port>
-	docker -H <swarm_ip:swarm_port> run ubuntu bash                                           
+	docker -H <swarm_ip:swarm_port> run ubuntu bash
 
 ---
 
@@ -419,7 +419,7 @@ class: center, middle
 # The End
 
     </textarea>
-    <script src="../remark/out/remark.js" type="text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.10.2/remark.min.js" type="text/javascript">
     </script>
     <script type="text/javascript">
       var slideshow = remark.create();
