@@ -92,7 +92,7 @@ sub   rsa2048 2018-01-10 [E] [expires: 2020-01-03]
 
 ```sh
 $ gpg --list-keys
-/Users/minniebavaro/.gnupg/pubring.kbx
+/Users/alice/.gnupg/pubring.kbx
 --------------------------------------
 pub   rsa2048 2018-01-03 [SC] [expires: 2020-01-03]
       DA39A3EE5E6B4B0D3255BFEF95601890AFD80709
