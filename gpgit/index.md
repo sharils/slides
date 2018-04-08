@@ -109,6 +109,12 @@ $ gpg --keyserver keyserver.ubuntu.com --send-keys DA39A3EE5E6B4B0D3255BFEF95601
 gpg: sending key 95601890AFD80709 to hkp://keyserver.ubuntu.com
 ```
 
+Note that you can compute the short key id by yourself e.g.
+
+```sh
+tail -c 17 <<< DA39A3EE5E6B4B0D3255BFEF95601890AFD80709
+```
+
 ---
 
 # VERIFY KEY DISTRIBUTION
