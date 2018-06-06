@@ -300,6 +300,8 @@ $ cat secretfile
 GITCRYPT?jD?I!?????$&b?8D?m?
 ```
 
+Note: You can also use git status to verify encryption status right after commit
+
 ---
 
 # UNLOCK SECRETFILE
@@ -337,6 +339,106 @@ To unlock with a shared symmetric key instead, specify the path to the symmetric
 ---
 
 # [KEYBASE](https://keybase.io/)
+
+## ENCRYPTED PERSONAL OR TEAM REPOSITORY AND OTHERS
+
+---
+
+# CAUTION
+
+## KEYBASE CLIENT SHOULD BE INSTALLED IN AT LEAST TWO MACHINES
+
+---
+
+# SIGN UP
+
+![login](./login.png "login")
+
+----
+
+# SIGN UP
+
+![join-keybase](./join-keybase.png "join-keybase")
+
+----
+
+# SIGN UP
+
+![activate](./activate.png "activate")
+
+---
+
+# ADD A GPG KEY
+
+![add-a-pgp-key](./add-a-pgp-key.png "add-a-pgp-key")
+
+----
+
+# ADD A GPG KEY
+
+![i-need-a-public-key](./i-need-a-public-key.png "i-need-a-public-key")
+
+----
+
+# ADD A GPG KEY
+
+![ok-got-it](./ok-got-it.png "ok-got-it")
+
+----
+
+# ADD A GPG KEY
+
+![let-the-math-begin](./let-the-math-begin.png "let-the-math-begin")
+
+----
+
+# ADD A GPG KEY
+
+![done-post-to-keybase](./done-post-to-keybase.png "done-post-to-keybase")
+
+---
+
+# KEYBASE GIT COMMANDS
+
+```sh
+$ keybase git
+NAME:
+   keybase git - Manage git repos
+
+USAGE:
+   keybase git <command> [arguments...]
+
+COMMANDS:
+   create	Create a personal or team git repository.
+   delete	Delete a personal or team git repository.
+   list		List the personal and team git repositories you have access to.
+   gc		Run garbage collection on a personal or team git repository.
+   settings	View and change team repo settings
+   help, h	Shows a list of commands or help for one command
+```
+
+---
+
+# CREATE KEYBASE GIT REPOSITORY
+
+```sh
+$ keybase git create reponame
+Repo created! You can clone it with:
+  git clone keybase://private/alice/reponame
+```
+
+---
+
+# CLONE A KEYBASE REPO
+
+```sh
+$ git clone keybase://private/alice/reponame /tmp/reponame
+Cloning into '/tmp/reponame'...
+Initializing Keybase... done.
+Syncing with Keybase... done.
+Syncing encrypted data to Keybase: (100.00%) 2.22/2.22 KB... done.
+warning: You appear to have cloned an empty repository.
+```
 
 ---
 
