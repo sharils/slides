@@ -2,7 +2,7 @@
 
 ## [All about p445w0rd](./20180413-all-about-p455w0rd "All about p445w0rd")
 
-## [GPGit](http://sharils.github.io/slides/gpgit)
+## [GPGit](https://sharils.github.io/slides/gpgit)
 
 ## jscodeshift: Refactor JS w/ JS
 
