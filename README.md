@@ -4,14 +4,7 @@
 
 ## [GPGit](https://sharils.github.io/slides/gpgit)
 
-## jscodeshift: Refactor JS w/ JS
-
-```sh
-git clone --depth=1 --recursive https://github.com/sharils/slides.git /tmp/slides/
-cd /tmp/slides/jscodeshift
-yarn
-open /tmp/slides/jscodeshift/slides/index.html
-```
+## [jscodeshift: Refactor JS w/ JS](https://sharils.github.io/slides/jscodeshift-refactor-js-with-js/)
 
 ## 97 Things Every Programmer Should Know
 
