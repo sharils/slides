@@ -22,11 +22,21 @@
 - [The Difference Between Explicit and Implicit Grids | CSS-Tricks][2]
 - [Grid Garden - A game for learning CSS grid][3]
 - [CSS Grid Practice][4]
+- [Breaking Down a CSS Grid Layout, an article by Tim Wright][5]
+- [Auto-Sizing Columns in CSS Grid: `auto-fill` vs `auto-fit` | CSS-Tricks][6]
 
 [1]: https://css-tricks.com/snippets/css/complete-guide-grid/
 [2]: https://css-tricks.com/difference-explicit-implicit-grids/
 [3]: https://cssgridgarden.com/
 [4]: https://coursework.vschool.io/css-grid-practice/
+[5]: https://csskarma.com/blog/css-grid-layout/
+[6]: https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+
+---
+
+# [Introduction to CSS Grid][1]
+
+[1]: https://www.slideshare.net/KaraLuton1/introduction-to-css-grid
 
 ---
 
