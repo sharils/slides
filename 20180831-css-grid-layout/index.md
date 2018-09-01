@@ -40,6 +40,18 @@
 
 ---
 
+# Toolbox
+
+- [Grid Inspector Tool][1]
+- [Eyedropper - Firefox Developer Tools][2]
+- [Measure a portion of the page][3]
+
+[1]: https://www.mozilla.org/en-US/developer/css-grid/
+[2]: https://developer.mozilla.org/en-US/docs/Tools/Eyedropper
+[3]: https://developer.mozilla.org/en-US/docs/Tools/Measure_a_portion_of_the_page
+
+---
+
 # [Practice 0][1]
 
 [1]: https://jsfiddle.net/elvishhunter/cgp8we29/
@@ -66,21 +78,13 @@
 
 # [Practice 4][1]
 
-[CSS Grid Practice 4 - JSFiddle][1]
-
 [1]: https://jsfiddle.net/elvishhunter/nobuqast/
 
 ---
 
-# Toolbox
+# [More practice][1]
 
-- [Grid Inspector Tool][1]
-- [Eyedropper - Firefox Developer Tools][2]
-- [Measure a portion of the page][3]
-
-[1]: https://www.mozilla.org/en-US/developer/css-grid/
-[2]: https://developer.mozilla.org/en-US/docs/Tools/Eyedropper
-[3]: https://developer.mozilla.org/en-US/docs/Tools/Measure_a_portion_of_the_page
+[1]: https://gridbyexample.com/examples/
 
 ---
 
