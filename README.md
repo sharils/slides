@@ -4,9 +4,9 @@
 
 ## [All about p445w0rd](./20180413-all-about-p455w0rd "All about p445w0rd")
 
-## [GPGit](https://sharils.github.io/slides/gpgit)
+## [GPGit](./20180609-gpgit "GPGit")
 
-## [jscodeshift: Refactor JS w/ JS](https://sharils.github.io/slides/jscodeshift-refactor-js-with-js/)
+## [jscodeshift: Refactor JS w/ JS](./20171105-jscodeshift-refactor-js-with-js/ "jscodeshift: Refactor JS w/ JS")
 
 ## 97 Things Every Programmer Should Know
 
