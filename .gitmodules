@@ -1,3 +1,6 @@
 [submodule "deck.js"]
 	path = deck.js
 	url = https://github.com/imakewebthings/deck.js.git
+[submodule "20181117-mfa-in-js/local-cert-generator"]
+	path = 20181117-mfa-in-js/local-cert-generator
+	url = https://github.com/dakshshah96/local-cert-generator
