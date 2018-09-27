@@ -77,6 +77,12 @@ Multi-factor authentication
 
 ---
 
+# [WebAuthn][1]
+
+[1]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API
+
+---
+
 # U2F
 
 OTP 已死 U2F 永存：JavaScript U2F 兩步驟驗證實戰
