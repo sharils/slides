@@ -128,9 +128,8 @@ Dropbox, Facebook, Github, Google, etc
 * $50 USD ($1,539 TWD)
 * adapter
 * US only
-* US IP required to open Titan Key (tor)
 
-[1]: https://store.google.com/product/titan_security_key_kit
+[1]: https://cloud.google.com/titan-security-key/
 
 ----
 
