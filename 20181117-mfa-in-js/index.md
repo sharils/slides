@@ -177,7 +177,7 @@ Dropbox, Facebook, Github, Google, etc
 # [BROWSERSYNC][1]
 
 ```sh
-browser-sync start --proxy 'localhost:8000'
+browser-sync start --https --proxy 'localhost:8000'
 ```
 
 [1]: https://browsersync.io/
