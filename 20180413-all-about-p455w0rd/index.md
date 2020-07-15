@@ -56,7 +56,7 @@ sli.do#all-about-p455w0rd
 
 ----
 
-## Should you crack other’s password?
+## [Should you crack other’s password?](https://law.moj.gov.tw/ENG/LawClass/LawParaDeatil.aspx?pcode=C0000001&bp=53 "A person who without reason by entering another’s account code and password, breaking his computer protection, or taking advantage of the system loophole of such other accesses his computer or relating equipment shall be sentenced to imprisonment for not more than three years or short-term imprisonment; in lieu thereof, or in addition thereto, a fine of not more than one three hundred thousand dollars may be imposed.")
 
 ----
 
