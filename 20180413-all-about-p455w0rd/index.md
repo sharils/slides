@@ -37,11 +37,22 @@ sli.do#all-about-p455w0rd
 
 ----
 
+## Is the 1st password safer than the 2nd password?
+
+1. `g0d::::::::::::::::::`
+2. `utD6u'P5(y.~Fw._PI2!`
+
+----
+
 ## How should you store your users’ passwords in your app’s database?
 
 ----
 
 ## What should you do if you accidentally commited and pushed your passwords to a public GitHub repo?
+
+----
+
+## Should you write your password on a stickie and paste it at the back of your keyboard?
 
 ----
 
@@ -54,10 +65,6 @@ sli.do#all-about-p455w0rd
 ----
 
 ## Should you use a website to check if your password has been pawned? E.g. [Pwned Passwords](https://haveibeenpwned.com/Passwords "Pwned Passwords")
-
-----
-
-## How about `that` password? You know what I mean.
 
 ---
 
