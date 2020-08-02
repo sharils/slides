@@ -44,7 +44,7 @@ No one has to stay up
 - [Singapore 1,153,911 TWD](https://www.payscale.com/research/SG/Job=Front_End_Developer_%2F_Engineer/Salary "Front End Developer / Engineer Salary in Singapore | PayScale")
 - [Taiwan 780,000 TWD](https://www.payscale.com/research/TW/Job=Front_End_Developer_%2F_Engineer/Salary "Front End Developer / Engineer Salary in Taiwan | PayScale")
 - [Malaysia 435,118 TWD](https://www.payscale.com/research/MY/Job=Front_End_Developer_%2F_Engineer/Salary "Front End Developer / Engineer Salary in Malaysia | PayScale")
-- [India 190,822 TWD](https://www.payscale.com/research/MY/Job=Front_End_Developer_%2F_Engineer/Salary "Front End Developer / Engineer Salary in Malaysia | PayScale")
+- [India 190,822 TWD](https://www.payscale.com/research/IN/Job=Front_End_Developer_%2F_Engineer/Salary "Front End Developer / Engineer Salary in India | PayScale")
 
 ----
 
@@ -116,9 +116,9 @@ Join other organisation’s Slack
 
 ## MISUNDERSTAND
 
-[What's the difference between “k,” “OK,” and “okay”? - Quora](https://www.quora.com/Whats-the-difference-between-k-OK-and-okay "What's the difference between “k,” “OK,” and “okay”? - Quora")
+[What's the difference between “k,” “OK,” and “okay”?](https://www.quora.com/Whats-the-difference-between-k-OK-and-okay "What's the difference between “k,” “OK,” and “okay”? - Quora")
 
-- Okay is the most professional out of the three options
+- Okay is the most professional out of the three
 - Ok is mostly used between friends or family
 - K is used when someone DOES NOT WANT TO TALK TO SOMEONE ANYMORE!
 
@@ -126,6 +126,7 @@ Join other organisation’s Slack
 
 ## PROGRESS
 
+- Burndown chart
 - Daily stand-up
 - Demo
 
@@ -171,15 +172,25 @@ It’s their house, just deal with it
 
 ----
 
-## TIMEZONE
+## TIMEZONE I
 
 - You get into flow easily when your coworkers are sleeping
 - Your PR won't be approved when your coworkers are sleeping
+
+----
+
+## TIMEZONE II
+
 - Considering day light saving: Taiwan morning > Taiwan night > Flip weekly
   - New York 1030 = Taiwan 2330 (winter)
   - New York 1030 = Taiwan 2230 (summer)
   - New York 2230 = Taiwan 1130 (winter)
   - New York 2230 = Taiwan 1030 (summer)
+
+----
+
+## TIMEZONE III
+
 - Sync with west coast vs east coast
   - Mountain View 1600 = Taiwan 0800 (winter)
   - Mountain View 1600 = Taiwan 0900 (summer)
@@ -196,7 +207,7 @@ OTP Code expires often
 
 ## COMMUTING
 
-- Commuting cost 48,750 per year = (780,000 salary / 2080 hours/year) * (0.5 hour/day * (2080 / 8) days)
+- Commuting cost 48,750 per year (780,000 salary / 2080 hours/year) \* (0.5 hour/day \* (2080 / 8) days)
 - Walk daily during commute is good for health
 
 ----
@@ -231,25 +242,26 @@ OTP Code expires often
 
 ## ASANA BY DEFAULT
 
-Comment on tickets (instead of Slack) by default so decisions are documented
+Commenting on tickets (instead of Slack) makes it easier to traceback.
 
 ----
 
 ## BLOCKER RESOLUTION
 
-Blocker has to be address if blocked for longer than 2 hours
+Blocker has to be address no longer than 2 hours
 
 ----
 
 ## CODE REVIEW
 
-Code review is a good chance to communicate about the code
+Code review is a good chance to communicate about the repository
 
 ----
 
 ## DAILY STAND-UP
 
-Daily stand-up eases loneliness and improves progress sync
+- Ease loneliness
+- Improves progress sync
 
 ----
 
@@ -262,18 +274,18 @@ Document helps communication a lot
 ## FIXED OFFICE HOUR
 
 - Ensure there is no constant over night superhero
-- People have smarter to finish things before taking off
 - Less interference to rest time
 - People have time for their own growth
 - Prevent procrastination
+- People become smarter to finish things before taking off
 
 ----
 
 ## POMODORO TECHNIQUE
 
-- Help identify internal interruption and external interruption
 - Help prevent procrastination
 - Help us not to be blocked for too long
+- Help identify internal interruption and external interruption
 
 ----
 
@@ -293,7 +305,7 @@ Time to ensure everyone from the team is on the same page
 
 ----
 
-## Software
+## SOFTWARE
 
 - Asana
 - CoScreen
@@ -306,21 +318,21 @@ Time to ensure everyone from the team is on the same page
 
 ----
 
-## Software Comparison
+## SOFTWARE COMPARISON
 
-- CoScreen is slow when there are too many windows
-- MacOS Screen Sharing hard to establish connection and few visual feedback
-- Zoom slows down the whole computer during screen sharing
+- CoScreen: slow when there are too many windows
+- MacOS Screen Sharing: hard to establish connection and few visual feedback
+- Zoom: slow down the whole computer during screen sharing
 
 ----
 
-## Hardware
+## HARDWARE
 
 - Artso CB-天絲舒適透氣辦公椅(白)
 - [GeChic 1306H](https://www.gechic.com/tw/1306h-portable-monitor/)
 - Macbook Air
 
-P.s. Macbook Air is slow when I develop our React Native app that connects to one docker flask service and another docker graphql service
+P.s. Macbook Air is slow when I develop our React Native app that connects to one docker flask service and another docker nodejs service
 
 ---
 
