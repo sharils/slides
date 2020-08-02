@@ -168,7 +168,7 @@ It’s their house, just deal with it
 
 ---
 
-# EQUILIBRIUM
+# BOTH GOOD AND BAD
 
 ----
 
