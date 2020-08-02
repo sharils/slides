@@ -207,7 +207,7 @@ OTP Code expires often
 
 ## COMMUTING
 
-- Commuting cost 48,750 per year (780,000 salary / 2080 hours/year) \* (0.5 hour/day \* (2080 / 8) days)
+- Commuting in average cost 48,750 TWD per year (780,000 salary / 2080 hours/year) \* (0.5 hour/day \* (2080 / 8) days)
 - Walk daily during commute is good for health
 
 ----
