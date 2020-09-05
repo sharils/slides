@@ -110,7 +110,7 @@ Join other organisation’s Slack
 ## TAX
 
 - [Work for a U.S. Company from Taiwan](https://www.facebook.com/groups/1190343134374259/permalink/3797043957037484/ "遠距工作者在台灣 (work remotely in Taiwan) | Facebook")
-- [Remote income does NOT equal to oversea income](https://www.facebook.com/groups/1190343134374259/permalink/3134838069924746/ "遠距工作者在台灣 (work remotely in Taiwan) | Facebook")
+- [Remote income is NOT equal to oversea income](https://www.facebook.com/groups/1190343134374259/permalink/3134838069924746/ "遠距工作者在台灣 (work remotely in Taiwan) | Facebook")
 
 ----
 
