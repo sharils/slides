@@ -114,13 +114,23 @@ Join other organisation’s Slack
 
 ----
 
-## MISUNDERSTAND
+## MISUNDERSTAND I
 
 [What's the difference between “k,” “OK,” and “okay”?](https://www.quora.com/Whats-the-difference-between-k-OK-and-okay "What's the difference between “k,” “OK,” and “okay”? - Quora")
 
 - Okay is the most professional out of the three
 - Ok is mostly used between friends or family
 - K is used when someone DOES NOT WANT TO TALK TO SOMEONE ANYMORE!
+
+----
+
+## MISUNDERSTAND II
+
+[na-ge (那個) sounds like the N-word](https://www.bbc.com/news/world-asia-china-54107329 "Suspension of a US professor sparks debate over a Chinese word - BBC News")
+
+- In July 2016, a fight broke out on the subway in the city of Southern Guangzhou, after a black man heard a Chinese man saying na-ge and mistook it for the N-word.
+- More recently, in April this year, Taiwanese news website UDN reported that two men nearly came to blows on the island outside a restaurant over the same misunderstanding.
+- Even Chinese basketball star Yao Ming has spoken of how the word brought him "some trouble" while playing in the US for the National Basketball Association (NBA).
 
 ----
 
