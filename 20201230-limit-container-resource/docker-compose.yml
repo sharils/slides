@@ -1,0 +1,12 @@
+# https://stackoverflow.com/a/56401827
+version: "2.4"
+services:
+  memory-leak:
+    image: node:alpine
+    volumes:
+      - $PWD:$PWD
+    working_dir: $PWD
+    command: node server.js
+    cpus: 0.2
+    mem_limit: 20m
+    restart: unless-stopped
