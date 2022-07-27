@@ -1,5 +1,7 @@
 # slides
 
+## [LEARN RUST VERBS](./20220731-learn-rust-verbs "LEARN RUST VERBS")
+
 ## [12 HOURS AWAY](./20201017-12-hours-away "12 HOURS AWAY")
 
 ## [MFA IN JS](./20181117-mfa-in-js "MFA IN JS")
