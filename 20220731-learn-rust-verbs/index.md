@@ -1,5 +1,13 @@
 # INTRODUCTION
 
+![Join Slido: Enter #code to vote and ask questions](./index.png "Join Slido: Enter #code to vote and ask questions")
+
+[app.sli.do/event/pdmHAZWcGDERsxZzcx6i7g](https://app.sli.do/event/pdmHAZWcGDERsxZzcx6i7g "Learn Rust Verbs")
+
+----
+
+# INTRODUCTION
+
 ```rust
 fn main() {
     let bad_beef = 0xBadBeef;
