@@ -168,17 +168,17 @@ no GC, i.e.
 ```rust
 // 4. Move String into bad_beef
 fn inspect(bad_beef: String) -> String {
-    dbg!(bad_beef); // 5. Move String into dbg
+    dbg!(bad_beef); // 5. Move bad_beef into dbg
                     // 6. Invalidate bad_beef in inspect
-    return bad_beef; // 7. Move bad_beef into main 💥
+                    // 7. Drop bad_beef at the end of inspect
+    return bad_beef; // 8. Move bad_beef into main 💥
 }
 fn main() {
     // 1. Move String into bad_beef
     let bad_beef = String::from("Bad Beef!");
-
     // 2. Move bad_beef into inspect
     // 3. Invalidate bad_beef in main
-    // 8. Move String into println
+    // 9. Move String into println
     println!("No {}", inspect(bad_beef));
 }
 ```
