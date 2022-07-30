@@ -1,12 +1,20 @@
-# INTRODUCTION
+# LEARN RUST VERBS
 
-![Join Slido: Enter #code to vote and ask questions](./index.png "Join Slido: Enter #code to vote and ask questions")
+![https://sharils.github.io/slides/20220731-learn-rust-verbs](./qa.png "Learn Rust Verbs")
+
+[sharils.github.io/slides/20220731-learn-rust-verbs](https://sharils.github.io/slides/20220731-learn-rust-verbs "https://sharils.github.io/slides/20220731-learn-rust-verbs")
+
+---
+
+# Q&A
+
+![Join Slido: Enter #code to vote and ask questions](./qa.png "Join Slido: Enter #code to vote and ask questions")
 
 [app.sli.do/event/pdmHAZWcGDERsxZzcx6i7g](https://app.sli.do/event/pdmHAZWcGDERsxZzcx6i7g "Learn Rust Verbs")
 
-----
+---
 
-# INTRODUCTION
+# THE PROBLEM
 
 ```rust
 fn main() {
@@ -19,7 +27,7 @@ Easy. [▶️](https://play.rust-lang.org/?version=stable&mode=debug&edition=202
 
 ----
 
-# INTRODUCTION
+# THE PROBLEM
 
 ```rust
 fn inspect(bad_beef: i32) -> i32 {
@@ -37,7 +45,7 @@ Let's inspect. [▶️](https://play.rust-lang.org/?version=stable&mode=debug&ed
 
 ----
 
-# INTRODUCTION
+# THE PROBLEM
 
 ```rust
 fn inspect(bad_beef: String) -> String {
@@ -55,7 +63,7 @@ Now a String. [▶️](https://play.rust-lang.org/?version=stable&mode=debug&edi
 
 ----
 
-# INTRODUCTION
+# THE PROBLEM
 
 ```
    Compiling playground v0.0.1 (/playground)
