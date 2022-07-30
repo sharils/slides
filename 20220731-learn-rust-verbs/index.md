@@ -258,15 +258,15 @@ fn main() {
 ```rust
 // 3. Move String into bad_beef
 fn inspect(bad_beef: String) -> String {
-    dbg!(&bad_beef); // 4. Borrow String
-                     // 5. Copy borrow of String to dbg ✅
-    return bad_beef; // 6. Move String into main
+    dbg!(&bad_beef); // 4. Borrow bad_beef
+                     // 5. Copy borrow of bad_beef to dbg ✅
+    return bad_beef; // 6. Move bad_beef into main
 }
 fn main() {
     // 1. Move String into bad_beef
     let bad_beef = String::from("Bad Beef!");
 
-    // 2. Move String into inspect
+    // 2. Move bad_beef into inspect
     // 7. Move String into println
     println!("No {}", inspect(bad_beef));
 }
