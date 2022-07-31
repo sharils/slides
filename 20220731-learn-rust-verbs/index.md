@@ -1,6 +1,6 @@
 # LEARN RUST VERBS
 
-![https://sharils.github.io/slides/20220731-learn-rust-verbs](./qa.png "Learn Rust Verbs")
+![https://sharils.github.io/slides/20220731-learn-rust-verbs](./index.png "Learn Rust Verbs")
 
 [sharils.github.io/slides/20220731-learn-rust-verbs](https://sharils.github.io/slides/20220731-learn-rust-verbs "https://sharils.github.io/slides/20220731-learn-rust-verbs")
 
