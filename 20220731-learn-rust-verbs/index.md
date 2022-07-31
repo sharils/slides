@@ -283,15 +283,15 @@ Borrow: [no change of ownership][5] → no right to drop. [▶️](https://play.
 ```rust
 // 4. Copy borrow of String to bad_beef
 fn inspect(bad_beef: &String) -> &String {
-    dbg!(bad_beef);  // 5. Copy borrow of String to dbg
-    return bad_beef; // 6. Copy borrow of String to main
+    dbg!(bad_beef);  // 5. Copy borrow of bad_beef to dbg
+    return bad_beef; // 6. Copy borrow of bad_beef to main
 }
 fn main() {
     // 1. Move String into bad_beef
     let bad_beef = String::from("Bad Beef!");
 
-    // 2. Borrow String
-    // 3. Copy borrow of String to inspect ✅
+    // 2. Borrow bad_beef
+    // 3. Copy borrow of bad_beef to inspect ✅
     // 7. Copy borrow of String to println
     println!("No {}", inspect(&bad_beef));
 }
