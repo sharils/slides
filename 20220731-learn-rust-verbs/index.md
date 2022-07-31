@@ -170,7 +170,7 @@ no GC, i.e.
 fn inspect(bad_beef: String) -> String {
     dbg!(bad_beef); // 5. Move bad_beef into dbg
                     // 6. Invalidate bad_beef in inspect
-                    // 7. Drop bad_beef at the end of inspect
+                    // 7. Drop bad_beef at the end of dbg
     return bad_beef; // 8. Move bad_beef into main 💥
 }
 fn main() {
