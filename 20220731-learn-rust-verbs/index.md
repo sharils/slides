@@ -578,6 +578,14 @@ Try to say those verbs (copy, move, clone, borrow, ref, deref) when you are typi
 
 ---
 
+# Q&A
+
+![Join Slido: Enter #code to vote and ask questions](./qa.png "Join Slido: Enter #code to vote and ask questions")
+
+[app.sli.do/event/pdmHAZWcGDERsxZzcx6i7g](https://app.sli.do/event/pdmHAZWcGDERsxZzcx6i7g "Learn Rust Verbs")
+
+---
+
 # ABOUT ME
 
 If you are looking for a full time and fully remote 10+ years web developer (and 3+ years of team lead) with production experience in *AWS, MongoDB, MySQL, Elixir, Phoenix, JavaScript, TypeScript, React, React Native, NativeBase, OpenAPI, Apollo GraphQL, Docker, Shell*.
